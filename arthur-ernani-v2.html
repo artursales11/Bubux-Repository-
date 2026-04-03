@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Arthur Ernani — Clínico Geral | Consulta Online</title>
+<meta name="description" content="Dr. Arthur Ernani, CRM MG 104895. Consultas online humanizadas, atestados e receitas digitais. Agende agora via WhatsApp.">
+<meta property="og:title" content="Dr. Arthur Ernani — Consulta Online">
+<meta property="og:description" content="Consultas online humanizadas, atestados e receitas com validade legal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ── DESIGN SYSTEM (extraído da landing principal) ── */
+:root {
+  --bg-dark:     #0D1117;
+  --bg-card:     #161B22;
+  --bg-card2:    #1C2333;
+  --green:       #2EA043;
+  --green-light: #3FB950;
+  --green-glow:  rgba(46,160,67,0.18);
+  --green-border:rgba(46,160,67,0.3);
+  --white:       #E6EDF3;
+  --white-muted: #8B949E;
+  --white-faint: rgba(230,237,243,0.06);
+  --border:      rgba(230,237,243,0.1);
+  --wa-green:    #25D366;
+  --wa-dark:     #128C7E;
+  --radius:      10px;
+  --radius-lg:   16px;
+  --shadow:      0 8px 32px rgba(0,0,0,0.4);
+  --glow:        0 0 40px rgba(46,160,67,0.15);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-dark);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--green); border-radius:3px; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 0 40px;
+  height: 64px;
+  background: rgba(13,17,23,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  display:flex; align-items:center; gap:10px;
+  text-decoration:none;
+}
+.nav-logo-icon {
+  width:32px; height:32px;
+  background: linear-gradient(135deg, var(--green), #1a7a30);
+  border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:16px;
+}
+.nav-logo-text {
+  font-size:14px; font-weight:600; color:var(--white);
+  line-height:1.2;
+}
+.nav-logo-text span { display:block; font-size:10px; font-weight:400; color:var(--white-muted); }
+.nav-links { display:flex; gap:6px; }
+.nav-link {
+  padding:6px 14px; border-radius:6px;
+  font-size:13px; color:var(--white-muted);
+  text-decoration:none; transition:all 0.2s;
+}
+.nav-link:hover { background:var(--white-faint); color:var(--white); }
+.nav-cta {
+  background: var(--green);
+  color:#fff; padding:8px 18px; border-radius:8px;
+  font-size:13px; font-weight:600; text-decoration:none;
+  display:flex; align-items:center; gap:6px;
+  transition:all 0.2s;
+}
+.nav-cta:hover { background:var(--green-light); transform:translateY(-1px); }
+.nav-cta svg { width:14px; height:14px; }
+
+/* ── HERO ── */
+.hero {
+  min-height:100vh;
+  display:flex; align-items:center;
+  padding: 80px 40px 60px;
+  position:relative; overflow:hidden;
+}
+.hero-bg {
+  position:absolute; inset:0; z-index:0;
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(46,160,67,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse 40% 40% at 80% 60%, rgba(46,160,67,0.06) 0%, transparent 50%);
+}
+.hero-grid-lines {
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity:0.3;
+}
+.hero-inner {
+  position:relative; z-index:1;
+  max-width:1100px; margin:0 auto;
+  display:grid; grid-template-columns:1fr 420px; gap:64px; align-items:center;
+  width:100%;
+}
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background: var(--green-glow);
+  border:1px solid var(--green-border);
+  color:var(--green-light); padding:6px 14px; border-radius:100px;
+  font-size:12px; font-weight:500; letter-spacing:0.04em;
+  margin-bottom:24px; width:fit-content;
+  animation: fadeUp 0.5s ease both;
+}
+.hero-badge::before {
+  content:''; width:7px; height:7px;
+  background:var(--green); border-radius:50%;
+  box-shadow:0 0 8px var(--green);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.5;transform:scale(.7)}
+}
+.hero h1 {
+  font-size:clamp(36px,5vw,64px);
+  font-weight:800; line-height:1.1;
+  color:var(--white);
+  margin-bottom:20px;
+  animation:fadeUp 0.5s 0.08s ease both;
+}
+.hero h1 .accent { color:var(--green-light); }
+.hero-desc {
+  font-size:16px; color:var(--white-muted);
+  line-height:1.8; max-width:480px;
+  margin-bottom:36px; font-weight:400;
+  animation:fadeUp 0.5s 0.15s ease both;
+}
+.hero-actions {
+  display:flex; gap:12px; flex-wrap:wrap;
+  animation:fadeUp 0.5s 0.22s ease both;
+}
+.btn-wa {
+  background: var(--wa-green);
+  color:#fff; padding:14px 28px; border-radius:10px;
+  font-size:15px; font-weight:700; text-decoration:none;
+  display:inline-flex; align-items:center; gap:10px;
+  transition:all 0.25s; box-shadow:0 4px 20px rgba(37,211,102,0.3);
+}
+.btn-wa:hover { background:#20BD5A; transform:translateY(-2px); box-shadow:0 8px 32px rgba(37,211,102,0.4); }
+.btn-outline {
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--white); padding:14px 28px; border-radius:10px;
+  font-size:15px; font-weight:500; text-decoration:none;
+  display:inline-flex; align-items:center; gap:8px;
+  transition:all 0.25s;
+}
+.btn-outline:hover { border-color:var(--green-border); color:var(--green-light); background:var(--green-glow); }
+.hero-trust {
+  margin-top:48px; padding-top:32px; border-top:1px solid var(--border);
+  display:flex; gap:32px; flex-wrap:wrap;
+  animation:fadeUp 0.5s 0.3s ease both;
+}
+.trust-item { display:flex; align-items:center; gap:8px; }
+.trust-icon { font-size:18px; }
+.trust-text { font-size:13px; color:var(--white-muted); }
+.trust-text strong { color:var(--white); display:block; font-size:14px; }
+
+/* HERO — CARD */
+.hero-card {
+  background: var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow: var(--shadow), var(--glow);
+  animation:fadeUp 0.6s 0.1s ease both;
+}
+.card-header {
+  background: linear-gradient(135deg, #161B22 0%, #1C2333 100%);
+  padding:28px 28px 0;
+  border-bottom:1px solid var(--border);
+  position:relative; overflow:hidden;
+}
+.card-header::before {
+  content:''; position:absolute;
+  top:-40px; right:-40px;
+  width:120px; height:120px;
+  background:radial-gradient(circle, rgba(46,160,67,0.2) 0%, transparent 70%);
+}
+.doctor-avatar-wrap { display:flex; align-items:center; gap:16px; margin-bottom:20px; }
+.doctor-avatar {
+  width:64px; height:64px; border-radius:50%;
+  background:linear-gradient(135deg, #2EA043, #1a7a30);
+  display:flex; align-items:center; justify-content:center;
+  font-size:22px; font-weight:700; color:#fff;
+  flex-shrink:0; border:2px solid var(--green-border);
+  box-shadow:0 0 20px rgba(46,160,67,0.3);
+}
+.doctor-info h3 { font-size:17px; font-weight:700; color:var(--white); margin-bottom:2px; }
+.doctor-info p { font-size:12px; color:var(--white-muted); }
+.crm-tag {
+  display:inline-flex; align-items:center; gap:5px;
+  background:var(--green-glow); border:1px solid var(--green-border);
+  color:var(--green-light); padding:4px 10px; border-radius:6px; font-size:11px;
+  margin-top:6px;
+}
+.card-tabs {
+  display:flex; gap:0; margin:0 -28px;
+}
+.card-tab {
+  flex:1; padding:12px; text-align:center;
+  font-size:12px; font-weight:500; color:var(--white-muted);
+  cursor:pointer; border-bottom:2px solid transparent;
+  transition:all 0.2s;
+}
+.card-tab.active { color:var(--green-light); border-bottom-color:var(--green); }
+.card-body { padding:24px 28px; }
+.card-panel { display:none; }
+.card-panel.active { display:block; }
+
+/* Serviços */
+.services-list { display:flex; flex-direction:column; gap:10px; }
+.service-row {
+  display:flex; align-items:center; gap:10px;
+  padding:10px 12px; border-radius:8px;
+  background:var(--white-faint); border:1px solid var(--border);
+  font-size:13px; color:var(--white);
+  transition:all 0.2s;
+}
+.service-row:hover { border-color:var(--green-border); background:var(--green-glow); }
+.service-icon { font-size:16px; flex-shrink:0; }
+.service-check { margin-left:auto; color:var(--green); font-size:14px; }
+
+/* Horários rápidos */
+.quick-slots { display:flex; flex-direction:column; gap:8px; }
+.slot-row {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px 14px; border-radius:8px;
+  background:var(--white-faint); border:1px solid var(--border);
+  font-size:13px;
+}
+.slot-day { color:var(--white); font-weight:500; }
+.slot-times { color:var(--white-muted); font-size:12px; }
+.slot-badge {
+  font-size:11px; padding:3px 8px; border-radius:4px;
+  font-weight:500;
+}
+.slot-badge.open { background:var(--green-glow); color:var(--green-light); border:1px solid var(--green-border); }
+.slot-badge.busy { background:rgba(255,165,0,0.1); color:#FFA500; border:1px solid rgba(255,165,0,0.3); }
+
+.card-cta {
+  margin-top:20px;
+  background:var(--wa-green); color:#fff;
+  padding:14px; border-radius:10px; border:none;
+  font-family:'Inter',sans-serif; font-size:14px; font-weight:700;
+  cursor:pointer; width:100%;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  transition:all 0.25s; text-decoration:none;
+}
+.card-cta:hover { background:#20BD5A; transform:translateY(-1px); }
+
+/* ── STATS BAR ── */
+.stats-bar {
+  background:var(--bg-card);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:32px 40px;
+}
+.stats-inner {
+  max-width:1100px; margin:0 auto;
+  display:grid; grid-template-columns:repeat(4,1fr); gap:32px;
+}
+.stat-item { text-align:center; }
+.stat-num {
+  font-size:36px; font-weight:800; color:var(--green-light);
+  line-height:1; margin-bottom:6px;
+}
+.stat-label { font-size:13px; color:var(--white-muted); }
+
+/* ── ABOUT ── */
+.section {
+  padding:96px 40px;
+  max-width:1100px; margin:0 auto;
+}
+.section-tag {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--green-glow); border:1px solid var(--green-border);
+  color:var(--green-light); padding:5px 12px; border-radius:6px;
+  font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+  margin-bottom:16px;
+}
+.section h2 {
+  font-size:clamp(28px,3.5vw,42px); font-weight:800;
+  color:var(--white); line-height:1.2; margin-bottom:16px;
+}
+.section p.lead {
+  font-size:16px; color:var(--white-muted); line-height:1.8; max-width:560px;
+}
+
+.about-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start;
+  margin-top:48px;
+}
+.about-features { display:flex; flex-direction:column; gap:16px; }
+.feature-card {
+  background:var(--bg-card); border:1px solid var(--border);
+  border-radius:var(--radius); padding:20px;
+  display:flex; gap:16px; align-items:flex-start;
+  transition:all 0.25s;
+}
+.feature-card:hover { border-color:var(--green-border); box-shadow:var(--glow); transform:translateX(4px); }
+.feature-ico {
+  width:42px; height:42px; border-radius:10px;
+  background:var(--green-glow); border:1px solid var(--green-border);
+  display:flex; align-items:center; justify-content:center;
+  font-size:20px; flex-shrink:0;
+}
+.feature-content h4 { font-size:14px; font-weight:600; color:var(--white); margin-bottom:4px; }
+.feature-content p { font-size:13px; color:var(--white-muted); line-height:1.6; }
+
+.process-card {
+  background:var(--bg-card); border:1px solid var(--border);
+  border-radius:var(--radius-lg); padding:32px;
+  position:sticky; top:80px;
+}
+.process-card h3 { font-size:18px; font-weight:700; color:var(--white); margin-bottom:28px; }
+.steps { display:flex; flex-direction:column; gap:0; }
+.step {
+  display:flex; gap:16px; padding:18px 0;
+  border-bottom:1px solid var(--border); position:relative;
+}
+.step:last-child { border-bottom:none; }
+.step-num {
+  width:28px; height:28px; border-radius:50%;
+  background:var(--green-glow); border:1px solid var(--green-border);
+  color:var(--green-light); font-size:11px; font-weight:700;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; margin-top:2px;
+}
+.step-info h4 { font-size:13px; font-weight:600; color:var(--white); margin-bottom:3px; }
+.step-info p { font-size:12px; color:var(--white-muted); line-height:1.5; }
+
+/* ── AGENDAMENTO ── */
+.scheduling-section {
+  background: var(--bg-card);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:96px 40px;
+}
+.scheduling-inner { max-width:1100px; margin:0 auto; }
+
+.scheduler-wrap {
+  margin-top:48px;
+  display:grid; grid-template-columns:1fr 1.4fr; gap:32px;
+}
+
+/* Painel esquerdo — opções */
+.sched-options { display:flex; flex-direction:column; gap:16px; }
+
+.sched-type-card {
+  background:var(--bg-dark); border:1px solid var(--border);
+  border-radius:var(--radius); padding:20px; cursor:pointer;
+  transition:all 0.2s; position:relative; overflow:hidden;
+}
+.sched-type-card:hover { border-color:var(--green-border); }
+.sched-type-card.active {
+  border-color:var(--green);
+  background:var(--green-glow);
+  box-shadow:0 0 0 1px var(--green);
+}
+.sched-type-card.active::before {
+  content:'✓';
+  position:absolute; top:12px; right:14px;
+  width:20px; height:20px; border-radius:50%;
+  background:var(--green); color:#fff;
+  font-size:11px; font-weight:700;
+  display:flex; align-items:center; justify-content:center;
+}
+.sched-type-icon { font-size:24px; margin-bottom:8px; display:block; }
+.sched-type-title { font-size:14px; font-weight:600; color:var(--white); margin-bottom:4px; }
+.sched-type-desc { font-size:12px; color:var(--white-muted); line-height:1.5; }
+
+.sched-info-box {
+  background:var(--bg-dark); border:1px solid var(--border);
+  border-radius:var(--radius); padding:20px;
+}
+.sched-info-box h4 { font-size:13px; font-weight:600; color:var(--white-muted); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px; }
+.info-row {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:8px 0; border-bottom:1px solid var(--border);
+  font-size:13px;
+}
+.info-row:last-child { border-bottom:none; }
+.info-row .key { color:var(--white-muted); }
+.info-row .val { color:var(--white); font-weight:500; }
+.info-row .val.green { color:var(--green-light); }
+
+/* Formulário de agendamento */
+.sched-form-wrap {
+  background:var(--bg-dark); border:1px solid var(--border);
+  border-radius:var(--radius-lg); overflow:hidden;
+}
+.sched-form-header {
+  padding:20px 28px;
+  border-bottom:1px solid var(--border);
+  display:flex; align-items:center; justify-content:space-between;
+}
+.sched-form-title { font-size:15px; font-weight:700; color:var(--white); }
+.step-pills { display:flex; gap:6px; }
+.step-pill {
+  width:24px; height:6px; border-radius:3px;
+  background:var(--border); transition:all 0.3s;
+}
+.step-pill.active { background:var(--green); }
+.step-pill.done { background:var(--green-light); opacity:0.5; }
+
+.sched-form-body { padding:24px 28px; }
+
+/* Step 1 — Calendário */
+.cal-wrap { display:none; }
+.cal-wrap.active { display:block; }
+
+.cal-nav-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+.cal-month { font-size:15px; font-weight:600; color:var(--white); }
+.cal-btn {
+  background:var(--bg-card); border:1px solid var(--border);
+  color:var(--white-muted); width:30px; height:30px;
+  border-radius:6px; cursor:pointer; font-size:16px;
+  transition:all 0.2s; display:flex; align-items:center; justify-content:center;
+}
+.cal-btn:hover { border-color:var(--green-border); color:var(--green-light); }
+
+.cal-weekdays { display:grid; grid-template-columns:repeat(7,1fr); margin-bottom:6px; }
+.cal-wd { text-align:center; font-size:11px; color:var(--white-muted); padding:6px 0; font-weight:500; }
+
+.cal-days { display:grid; grid-template-columns:repeat(7,1fr); gap:3px; }
+.cal-day {
+  aspect-ratio:1; display:flex; align-items:center; justify-content:center;
+  font-size:13px; border-radius:7px; cursor:pointer;
+  color:var(--white-muted); position:relative;
+  transition:all 0.15s;
+}
+.cal-day:hover:not(.disabled):not(.empty) { background:var(--green-glow); color:var(--white); }
+.cal-day.today { color:var(--green-light); font-weight:600; }
+.cal-day.selected { background:var(--green) !important; color:#fff !important; font-weight:700; }
+.cal-day.disabled { color:rgba(139,148,158,0.2); cursor:not-allowed; }
+.cal-day.has-slots::after {
+  content:''; position:absolute; bottom:3px;
+  width:4px; height:4px; background:var(--green); border-radius:50%;
+}
+
+/* Time slots */
+.slots-section { margin-top:20px; display:none; }
+.slots-section.visible { display:block; }
+.slots-label { font-size:12px; color:var(--white-muted); margin-bottom:10px; font-weight:500; }
+.slots-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; }
+.time-slot {
+  padding:9px 4px; border:1px solid var(--border);
+  border-radius:7px; text-align:center; font-size:12px;
+  color:var(--white-muted); cursor:pointer; background:var(--bg-card);
+  transition:all 0.15s; font-weight:500;
+}
+.time-slot:hover:not(.booked) { border-color:var(--green-border); color:var(--green-light); background:var(--green-glow); }
+.time-slot.selected { background:var(--green); border-color:var(--green); color:#fff; }
+.time-slot.booked { color:rgba(139,148,158,0.3); cursor:not-allowed; text-decoration:line-through; background:var(--bg-card); }
+
+/* Step 2 — Exame form */
+.exam-wrap { display:none; }
+.exam-wrap.active { display:block; }
+
+.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.form-group { display:flex; flex-direction:column; gap:6px; }
+.form-group.full { grid-column:1/-1; }
+.form-label { font-size:11px; color:var(--white-muted); text-transform:uppercase; letter-spacing:0.08em; font-weight:500; }
+.form-input, .form-select, .form-textarea {
+  background:var(--bg-card); border:1px solid var(--border);
+  color:var(--white); padding:11px 14px; border-radius:8px;
+  font-family:'Inter',sans-serif; font-size:13px; outline:none;
+  transition:border-color 0.2s;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--green-border); }
+.form-input::placeholder, .form-textarea::placeholder { color:rgba(139,148,158,0.5); }
+.form-select option { background:var(--bg-card); }
+.form-textarea { min-height:80px; resize:vertical; line-height:1.5; }
+
+/* Exame selector */
+.exam-selector {
+  display:grid; grid-template-columns:1fr 1fr; gap:8px;
+  grid-column:1/-1; margin-bottom:4px;
+}
+.exam-opt {
+  border:1px solid var(--border); border-radius:8px;
+  padding:12px; cursor:pointer; transition:all 0.2s;
+  display:flex; align-items:center; gap:10px;
+}
+.exam-opt:hover { border-color:var(--green-border); background:var(--green-glow); }
+.exam-opt.selected { border-color:var(--green); background:var(--green-glow); }
+.exam-opt.selected .exam-check { opacity:1; }
+.exam-ico { font-size:18px; flex-shrink:0; }
+.exam-text { font-size:12px; color:var(--white); font-weight:500; line-height:1.3; }
+.exam-check { margin-left:auto; color:var(--green); font-size:12px; opacity:0; transition:opacity 0.2s; }
+
+/* Step 3 — Confirmação */
+.confirm-wrap { display:none; }
+.confirm-wrap.active { display:block; text-align:center; }
+.confirm-icon { font-size:48px; margin-bottom:12px; }
+.confirm-title { font-size:20px; font-weight:800; color:var(--white); margin-bottom:6px; }
+.confirm-sub { font-size:13px; color:var(--white-muted); margin-bottom:24px; line-height:1.6; }
+.confirm-summary {
+  background:var(--bg-card); border:1px solid var(--border);
+  border-radius:var(--radius); padding:16px; text-align:left; margin-bottom:20px;
+}
+.sum-row {
+  display:flex; justify-content:space-between; padding:8px 0;
+  border-bottom:1px solid var(--border); font-size:12px;
+}
+.sum-row:last-child { border-bottom:none; }
+.sum-key { color:var(--white-muted); }
+.sum-val { color:var(--white); font-weight:500; }
+
+.sched-form-footer {
+  padding:16px 28px; border-top:1px solid var(--border);
+  display:flex; justify-content:space-between; align-items:center;
+}
+.btn-back-s {
+  background:none; border:1px solid var(--border); color:var(--white-muted);
+  padding:10px 18px; border-radius:8px; font-family:'Inter',sans-serif;
+  font-size:12px; font-weight:500; cursor:pointer; transition:all 0.2s;
+}
+.btn-back-s:hover { border-color:var(--white-muted); color:var(--white); }
+.btn-next-s {
+  background:var(--green); color:#fff;
+  border:none; padding:10px 22px; border-radius:8px;
+  font-family:'Inter',sans-serif; font-size:13px; font-weight:600;
+  cursor:pointer; transition:all 0.2s;
+  display:flex; align-items:center; gap:6px;
+}
+.btn-next-s:hover { background:var(--green-light); }
+.btn-next-s:disabled { opacity:0.3; cursor:not-allowed; }
+.slot-preview { font-size:12px; color:var(--green-light); font-weight:500; }
+
+/* ── REVIEWS ── */
+.reviews-section {
+  padding:96px 40px;
+}
+.reviews-inner { max-width:1100px; margin:0 auto; }
+.reviews-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:48px;
+}
+.review-card {
+  background:var(--bg-card); border:1px solid var(--border);
+  border-radius:var(--radius-lg); padding:28px;
+  transition:all 0.25s;
+}
+.review-card:hover { border-color:var(--green-border); box-shadow:var(--glow); }
+.review-stars { color:#F1C40F; font-size:13px; letter-spacing:2px; margin-bottom:14px; }
+.review-text { font-size:14px; color:var(--white-muted); line-height:1.7; margin-bottom:20px; font-style:italic; }
+.review-author { display:flex; align-items:center; gap:10px; }
+.review-avatar {
+  width:34px; height:34px; border-radius:50%;
+  background:linear-gradient(135deg, var(--green), #1a7a30);
+  display:flex; align-items:center; justify-content:center;
+  font-size:12px; font-weight:700; color:#fff; flex-shrink:0;
+}
+.review-name { font-size:13px; font-weight:600; color:var(--white); }
+.review-date { font-size:11px; color:var(--white-muted); }
+
+/* ── FAQ ── */
+.faq-section {
+  background:var(--bg-card);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:96px 40px;
+}
+.faq-inner { max-width:720px; margin:0 auto; }
+.faq-list { margin-top:48px; display:flex; flex-direction:column; gap:0; }
+.faq-item { border-bottom:1px solid var(--border); }
+.faq-question {
+  width:100%; background:none; border:none; color:var(--white);
+  font-family:'Inter',sans-serif; font-size:15px; font-weight:500;
+  padding:22px 0; display:flex; justify-content:space-between; align-items:center;
+  cursor:pointer; gap:16px; text-align:left; transition:color 0.2s;
+}
+.faq-question:hover { color:var(--green-light); }
+.faq-icon {
+  width:22px; height:22px; border-radius:50%;
+  border:1px solid var(--border); color:var(--white-muted);
+  display:flex; align-items:center; justify-content:center;
+  font-size:16px; flex-shrink:0; transition:all 0.3s;
+}
+.faq-item.open .faq-icon { background:var(--green); border-color:var(--green); color:#fff; transform:rotate(45deg); }
+.faq-answer { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+.faq-answer-inner { font-size:14px; color:var(--white-muted); line-height:1.8; padding-bottom:22px; }
+
+/* ── CTA FINAL ── */
+.cta-final {
+  padding:96px 40px; text-align:center;
+}
+.cta-inner {
+  max-width:600px; margin:0 auto;
+  background:var(--bg-card); border:1px solid var(--green-border);
+  border-radius:var(--radius-lg); padding:56px 48px;
+  box-shadow: var(--glow);
+  position:relative; overflow:hidden;
+}
+.cta-inner::before {
+  content:''; position:absolute; top:-60px; left:50%; transform:translateX(-50%);
+  width:200px; height:200px;
+  background:radial-gradient(circle, rgba(46,160,67,0.15) 0%, transparent 70%);
+}
+.cta-inner h2 { font-size:32px; font-weight:800; color:var(--white); margin-bottom:12px; position:relative; }
+.cta-inner p { font-size:15px; color:var(--white-muted); margin-bottom:32px; line-height:1.7; position:relative; }
+.cta-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; position:relative; }
+
+/* ── FOOTER ── */
+footer {
+  background:var(--bg-card);
+  border-top:1px solid var(--border);
+  padding:56px 40px 32px;
+}
+.footer-inner {
+  max-width:1100px; margin:0 auto;
+  display:grid; grid-template-columns:2fr 1fr 1fr; gap:64px;
+  padding-bottom:48px; border-bottom:1px solid var(--border);
+}
+.footer-brand {
+  font-size:18px; font-weight:800; color:var(--white); margin-bottom:12px;
+}
+.footer-desc { font-size:13px; color:var(--white-muted); line-height:1.7; max-width:260px; }
+.footer-cnpj { font-size:11px; color:rgba(139,148,158,0.5); margin-top:16px; line-height:1.7; }
+.footer-col h4 {
+  font-size:11px; font-weight:600; color:var(--green-light);
+  text-transform:uppercase; letter-spacing:0.12em; margin-bottom:16px;
+}
+.footer-links { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.footer-links a { font-size:13px; color:var(--white-muted); text-decoration:none; transition:color 0.2s; }
+.footer-links a:hover { color:var(--white); }
+.footer-bottom {
+  max-width:1100px; margin:24px auto 0;
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:12px; color:rgba(139,148,158,0.4);
+}
+
+/* WhatsApp float */
+.wa-float {
+  position:fixed; bottom:28px; right:28px; z-index:50;
+  width:56px; height:56px; background:var(--wa-green);
+  border-radius:50%; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 24px rgba(37,211,102,0.5); text-decoration:none;
+  transition:transform 0.2s, box-shadow 0.2s;
+  animation:fadeUp 1s 1.5s ease both;
+}
+.wa-float:hover { transform:scale(1.1); box-shadow:0 8px 40px rgba(37,211,102,0.6); }
+
+/* ── UTILS ── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(14px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.section-full { max-width:100%; }
+
+/* Mobile */
+@media(max-width:900px){
+  nav { padding:0 20px; }
+  .nav-links { display:none; }
+  .hero { padding:80px 20px 48px; }
+  .hero-inner { grid-template-columns:1fr; }
+  .hero-card { display:none; }
+  .stats-inner { grid-template-columns:repeat(2,1fr); }
+  .about-grid { grid-template-columns:1fr; }
+  .process-card { position:static; }
+  .scheduling-section { padding:64px 20px; }
+  .scheduler-wrap { grid-template-columns:1fr; }
+  .slots-grid { grid-template-columns:repeat(3,1fr); }
+  .reviews-grid { grid-template-columns:1fr; }
+  .cta-inner { padding:40px 28px; }
+  footer { padding:40px 20px 24px; }
+  .footer-inner { grid-template-columns:1fr; gap:32px; }
+  .section { padding:64px 20px; }
+  .reviews-section, .faq-section, .cta-final { padding:64px 20px; }
+  .form-grid { grid-template-columns:1fr; }
+  .exam-selector { grid-template-columns:1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">🏥</div>
+    <div class="nav-logo-text">
+      Dr. Arthur Ernani
+      <span>Clínica Online Popular</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#sobre" class="nav-link">Sobre</a>
+    <a href="#agendamento" class="nav-link">Agendar</a>
+    <a href="#avaliacoes" class="nav-link">Avaliações</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+  </div>
+  <a href="https://wa.me/5585999968434?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" class="nav-cta">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    WhatsApp
+  </a>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Atendimento online disponível</div>
+      <h1>Consulta médica<br>online com<br><span class="accent">cuidado de verdade.</span></h1>
+      <p class="hero-desc">
+        Atestado e receita digital com validade legal, enviados pelo WhatsApp.<br>
+        Sem sair de casa. Sem burocracia. Com o Dr. Arthur Ernani, CRM MG 104895.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5585999968434?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" class="btn-wa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a href="#agendamento" class="btn-outline">
+          📅 Agendar Online
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <span class="trust-icon">🔒</span>
+          <div class="trust-text"><strong>Sem depósito</strong>Pague só na consulta</div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">⚡</span>
+          <div class="trust-text"><strong>Resposta rápida</strong>Confirmação imediata</div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">📄</span>
+          <div class="trust-text"><strong>Validade legal</strong>Documentos certificados</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD -->
+    <div class="hero-card">
+      <div class="card-header">
+        <div class="doctor-avatar-wrap">
+          <div class="doctor-avatar">AE</div>
+          <div class="doctor-info">
+            <h3>Dr. Arthur Ernani</h3>
+            <p>Clínico Geral · UNIFOR</p>
+            <div class="crm-tag">✓ CRM MG 104895</div>
+          </div>
+        </div>
+        <div class="card-tabs">
+          <div class="card-tab active" onclick="switchTab('servicos',this)">Serviços</div>
+          <div class="card-tab" onclick="switchTab('horarios',this)">Horários</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-panel active" id="tab-servicos">
+          <div class="services-list">
+            <div class="service-row"><span class="service-icon">🩺</span> Consulta clínica online <span class="service-check">✓</span></div>
+            <div class="service-row"><span class="service-icon">📋</span> Atestado médico digital <span class="service-check">✓</span></div>
+            <div class="service-row"><span class="service-icon">💊</span> Receita médica digital <span class="service-check">✓</span></div>
+            <div class="service-row"><span class="service-icon">🔬</span> Solicitação de exames <span class="service-check">✓</span></div>
+            <div class="service-row"><span class="service-icon">🔄</span> Retorno sem custo extra <span class="service-check">✓</span></div>
+          </div>
+        </div>
+        <div class="card-panel" id="tab-horarios">
+          <div class="quick-slots">
+            <div class="slot-row">
+              <span class="slot-day">Seg–Sex</span>
+              <span class="slot-times">08:00 – 17:00</span>
+              <span class="slot-badge open">Disponível</span>
+            </div>
+            <div class="slot-row">
+              <span class="slot-day">Sábado</span>
+              <span class="slot-times">09:00 – 12:00</span>
+              <span class="slot-badge busy">Limitado</span>
+            </div>
+            <div class="slot-row">
+              <span class="slot-day">Domingo</span>
+              <span class="slot-times">—</span>
+              <span class="slot-badge" style="background:rgba(139,148,158,0.08);color:var(--white-muted);border:1px solid var(--border)">Fechado</span>
+            </div>
+          </div>
+        </div>
+        <a href="https://wa.me/5585999968434?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" class="card-cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Falar com o Dr. Arthur
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="stat-num">200+</div><div class="stat-label">Pacientes atendidos</div></div>
+    <div class="stat-item"><div class="stat-num">4.9★</div><div class="stat-label">Avaliação média</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Validade legal</div></div>
+    <div class="stat-item"><div class="stat-num">&lt;1h</div><div class="stat-label">Tempo de resposta</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div style="background:var(--bg-dark)">
+<div class="section" id="sobre">
+  <div class="section-tag">Sobre o médico</div>
+  <h2>Medicina humanizada,<br>onde você estiver.</h2>
+  <p class="lead">Médico formado pela Universidade de Fortaleza (UNIFOR). Minha paixão é o cuidado integral — ouvir cada história com atenção, respeito e empatia.</p>
+
+  <div class="about-grid">
+    <div class="about-features">
+      <div class="feature-card">
+        <div class="feature-ico">📋</div>
+        <div class="feature-content">
+          <h4>Documentos com validade legal</h4>
+          <p>Atestados e receitas assinadas digitalmente com certificado ICP-Brasil, enviados durante ou logo após a consulta.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-ico">🔄</div>
+        <div class="feature-content">
+          <h4>Retorno incluído, sem custo</h4>
+          <p>Envie seus exames pelo WhatsApp e receba avaliação completa. Se houver alteração relevante, nova consulta com prioridade.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-ico">📱</div>
+        <div class="feature-content">
+          <h4>Tudo no WhatsApp ou e-mail</h4>
+          <p>Receitas, atestados, links de videochamada e solicitações de exame chegam direto no canal que você preferir.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-ico">⏱️</div>
+        <div class="feature-content">
+          <h4>Consulta no seu tempo</h4>
+          <p>De atendimentos rápidos a consultas de até 1 hora. Sem pressa, focado no seu caso.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-card">
+      <h3>Como funciona?</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-info">
+            <h4>Agende pelo site ou WhatsApp</h4>
+            <p>Escolha dia, horário e tipo de consulta no sistema de agendamento ou fale diretamente no WhatsApp.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-info">
+            <h4>Receba o link da videochamada</h4>
+            <p>Link enviado via WhatsApp antes do horário. Sem instalação de app — funciona no navegador.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-info">
+            <h4>Consulta humanizada</h4>
+            <p>O Dr. Arthur dedica o tempo necessário para entender sua queixa e histórico completo.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-info">
+            <h4>Documentos imediatos</h4>
+            <p>Atestados, receitas e pedidos de exame enviados durante ou ao fim da consulta.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">05</div>
+          <div class="step-info">
+            <h4>Acompanhamento contínuo</h4>
+            <p>Retorno para análise de exames incluído. Cuidado que não termina com a consulta.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- AGENDAMENTO -->
+<section class="scheduling-section" id="agendamento">
+  <div class="scheduling-inner">
+    <div class="section-tag">Sistema de agendamento</div>
+    <h2>Agende sua consulta<br>ou solicitação de exame.</h2>
+    <p class="lead" style="color:var(--white-muted)">Escolha o tipo de atendimento, data e horário. Confirmação imediata via WhatsApp.</p>
+
+    <div class="scheduler-wrap">
+      <!-- Coluna esquerda -->
+      <div class="sched-options">
+        <div class="sched-type-card active" id="tipo-consulta" onclick="selectTipo('consulta')">
+          <span class="sched-type-icon">🩺</span>
+          <div class="sched-type-title">Consulta Clínica</div>
+          <div class="sched-type-desc">Atendimento geral, sintomas, orientação médica, atestados e receitas digitais.</div>
+        </div>
+        <div class="sched-type-card" id="tipo-exame" onclick="selectTipo('exame')">
+          <span class="sched-type-icon">🔬</span>
+          <div class="sched-type-title">Solicitação de Exames</div>
+          <div class="sched-type-desc">Pedido de exames laboratoriais, de imagem ou outros. Com orientação completa.</div>
+        </div>
+        <div class="sched-type-card" id="tipo-retorno" onclick="selectTipo('retorno')">
+          <span class="sched-type-icon">🔄</span>
+          <div class="sched-type-title">Retorno / Análise</div>
+          <div class="sched-type-desc">Avaliação de resultados de exames com o mesmo médico. Sem custo adicional.</div>
+        </div>
+        <div class="sched-info-box">
+          <h4>Informações</h4>
+          <div class="info-row"><span class="key">Médico</span><span class="val">Dr. Arthur Ernani</span></div>
+          <div class="info-row"><span class="key">CRM</span><span class="val">MG 104895</span></div>
+          <div class="info-row"><span class="key">Pagamento</span><span class="val">Pós-consulta (PIX)</span></div>
+          <div class="info-row"><span class="key">Retorno</span><span class="val green">✓ Incluso</span></div>
+          <div class="info-row"><span class="key">Documentos</span><span class="val green">✓ Validade legal</span></div>
+        </div>
+      </div>
+
+      <!-- Formulário -->
+      <div class="sched-form-wrap">
+        <div class="sched-form-header">
+          <span class="sched-form-title" id="form-title">Escolha a data e horário</span>
+          <div class="step-pills">
+            <div class="step-pill active" id="pill-1"></div>
+            <div class="step-pill" id="pill-2"></div>
+            <div class="step-pill" id="pill-3"></div>
+          </div>
+        </div>
+        <div class="sched-form-body">
+
+          <!-- STEP 1: Data -->
+          <div class="cal-wrap active" id="step-1">
+            <div class="cal-nav-row">
+              <button class="cal-btn" id="prev-m">‹</button>
+              <span class="cal-month" id="cal-month">Abril 2026</span>
+              <button class="cal-btn" id="next-m">›</button>
+            </div>
+            <div class="cal-weekdays">
+              <div class="cal-wd">Dom</div><div class="cal-wd">Seg</div>
+              <div class="cal-wd">Ter</div><div class="cal-wd">Qua</div>
+              <div class="cal-wd">Qui</div><div class="cal-wd">Sex</div>
+              <div class="cal-wd">Sáb</div>
+            </div>
+            <div class="cal-days" id="cal-days"></div>
+            <div class="slots-section" id="slots-sec">
+              <div class="slots-label">Horários disponíveis — <span id="slots-date-label">—</span></div>
+              <div class="slots-grid" id="slots-grid"></div>
+            </div>
+          </div>
+
+          <!-- STEP 2: Dados -->
+          <div class="exam-wrap" id="step-2">
+            <div class="form-grid">
+
+              <!-- Seletor de exame (só aparece no modo exame) -->
+              <div class="form-group full" id="exam-selector-wrap" style="display:none">
+                <label class="form-label">Tipo de exame solicitado</label>
+                <div class="exam-selector">
+                  <div class="exam-opt" onclick="selectExam(this,'Hemograma Completo')">
+                    <span class="exam-ico">🩸</span><span class="exam-text">Hemograma Completo</span><span class="exam-check">✓</span>
+                  </div>
+                  <div class="exam-opt" onclick="selectExam(this,'Glicemia / HbA1c')">
+                    <span class="exam-ico">💉</span><span class="exam-text">Glicemia / HbA1c</span><span class="exam-check">✓</span>
+                  </div>
+                  <div class="exam-opt" onclick="selectExam(this,'Lipidograma')">
+                    <span class="exam-ico">🫀</span><span class="exam-text">Lipidograma</span><span class="exam-check">✓</span>
+                  </div>
+                  <div class="exam-opt" onclick="selectExam(this,'Raio-X / Imagem')">
+                    <span class="exam-ico">🫁</span><span class="exam-text">Raio-X / Imagem</span><span class="exam-check">✓</span>
+                  </div>
+                  <div class="exam-opt" onclick="selectExam(this,'Urina / EAS')">
+                    <span class="exam-ico">🧪</span><span class="exam-text">Urina / EAS</span><span class="exam-check">✓</span>
+                  </div>
+                  <div class="exam-opt" onclick="selectExam(this,'Outros Exames')">
+                    <span class="exam-ico">📊</span><span class="exam-text">Outros exames</span><span class="exam-check">✓</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Nome completo *</label>
+                <input type="text" class="form-input" id="f-nome" placeholder="Seu nome">
+              </div>
+              <div class="form-group">
+                <label class="form-label">WhatsApp *</label>
+                <input type="tel" class="form-input" id="f-tel" placeholder="(85) 99999-9999">
+              </div>
+              <div class="form-group">
+                <label class="form-label">E-mail</label>
+                <input type="email" class="form-input" id="f-email" placeholder="seu@email.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Data de nascimento</label>
+                <input type="date" class="form-input" id="f-nasc">
+              </div>
+              <div class="form-group full">
+                <label class="form-label">Motivo da consulta / queixa principal</label>
+                <textarea class="form-textarea" id="f-queixa" placeholder="Descreva brevemente…"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3: Confirmação -->
+          <div class="confirm-wrap" id="step-3">
+            <div class="confirm-icon">🎉</div>
+            <div class="confirm-title">Agendado com sucesso!</div>
+            <div class="confirm-sub">Você receberá a confirmação e o link da videochamada via WhatsApp. Para pagamento, o PIX será enviado junto à confirmação.</div>
+            <div class="confirm-summary" id="confirm-summary">
+              <div class="sum-row"><span class="sum-key">Tipo</span><span class="sum-val" id="c-tipo">—</span></div>
+              <div class="sum-row"><span class="sum-key">Data</span><span class="sum-val" id="c-data">—</span></div>
+              <div class="sum-row"><span class="sum-key">Horário</span><span class="sum-val" id="c-hora">—</span></div>
+              <div class="sum-row"><span class="sum-key">Paciente</span><span class="sum-val" id="c-nome">—</span></div>
+              <div class="sum-row"><span class="sum-key">Médico</span><span class="sum-val">Dr. Arthur Ernani</span></div>
+              <div class="sum-row"><span class="sum-key">Pagamento</span><span class="sum-val" style="color:var(--green-light)">PIX — após confirmação</span></div>
+            </div>
+            <a href="https://wa.me/5585999968434" target="_blank" class="btn-wa" style="display:inline-flex;margin:0 auto">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              Confirmar no WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="sched-form-footer">
+          <button class="btn-back-s" id="btn-back" style="visibility:hidden" onclick="goBack()">← Voltar</button>
+          <span class="slot-preview" id="slot-preview"></span>
+          <button class="btn-next-s" id="btn-next" disabled onclick="goNext()">Continuar →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="avaliacoes">
+  <div class="reviews-inner">
+    <div class="section-tag">Avaliações</div>
+    <h2>O que dizem os pacientes.</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Muito obrigado doutor pelo atendimento, já tinha ido a vários médicos e nenhum tinha resolvido meu problema. Me senti ouvido de verdade."</p>
+        <div class="review-author">
+          <div class="review-avatar">RS</div>
+          <div><div class="review-name">Rodrigo Silva</div><div class="review-date">Março 2026</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Obrigada pelo atendimento, que Deus lhe abençoe! Você realmente se preocupa com as pessoas. Recebi meu atestado em minutos, sem burocracia."</p>
+        <div class="review-author">
+          <div class="review-avatar">MI</div>
+          <div><div class="review-name">Maria Inês</div><div class="review-date">Fevereiro 2026</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Consulta super tranquila, sem pressa. O Dr. Arthur explicou tudo com clareza e o retorno para análise dos exames foi muito ágil."</p>
+        <div class="review-author">
+          <div class="review-avatar">CA</div>
+          <div><div class="review-name">Carla Almeida</div><div class="review-date">Janeiro 2026</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="section-tag">Dúvidas frequentes</div>
+    <h2>FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Os documentos emitidos têm validade legal?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-answer-inner">Sim. Todos os atestados e receitas são assinados com certificado digital ICP-Brasil, com plena validade jurídica em todo o Brasil, conforme Resolução CFM nº 1.821/07 e Decreto nº 10.278/2020.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Como funciona o retorno para análise de exames?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-answer-inner">Após a consulta, envie os resultados pelo mesmo canal (WhatsApp ou e-mail). O Dr. Arthur avalia sem custo adicional. Se houver alteração relevante, agendamos nova consulta com prioridade.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Como é feito o pagamento?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-answer-inner">O pagamento é feito após a confirmação do agendamento, por PIX. Você paga apenas no dia da consulta — sem depósito antecipado. O QR Code PIX é enviado diretamente no WhatsApp.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Qual plataforma é usada para a videochamada?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-answer-inner">O link de videochamada é enviado pelo WhatsApp antes do horário. Funciona diretamente no navegador do celular ou computador — sem precisar baixar nenhum aplicativo.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Posso agendar apenas para solicitar exames?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-answer-inner">Sim. No sistema de agendamento existe a opção específica para "Solicitação de Exames". Durante a consulta, o Dr. Arthur avalia sua necessidade e emite o pedido com as especificações técnicas corretas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-inner">
+    <h2>Pronto para cuidar da sua saúde?</h2>
+    <p>Sem filas, sem deslocamento. Consulta online humanizada com o Dr. Arthur Ernani — agende agora pelo WhatsApp ou pelo sistema online.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/5585999968434?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" class="btn-wa">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+      <a href="#agendamento" class="btn-outline">Agendar Online</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Dr. Arthur Ernani</div>
+      <p class="footer-desc">Médico Clínico Geral formado pela UNIFOR. Atendimento online humanizado para todo o Brasil.</p>
+      <p class="footer-cnpj">Arthur Ernani Saldanha Servicos Medicos LTDA<br>CNPJ: 55.514.940/0001-90<br>Rua Rio Grande do Norte, 1435, Sala 708 — BH/MG</p>
+    </div>
+    <div>
+      <h4>Navegação</h4>
+      <ul class="footer-links">
+        <li><a href="#sobre">Sobre o médico</a></li>
+        <li><a href="#agendamento">Agendar consulta</a></li>
+        <li><a href="#avaliacoes">Avaliações</a></li>
+        <li><a href="#faq">Dúvidas frequentes</a></li>
+        <li><a href="https://clinicaonlinepopular.com.br" target="_blank">Clínica Online Popular</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <ul class="footer-links">
+        <li><a href="https://wa.me/5585999968434" target="_blank">WhatsApp direto</a></li>
+        <li><a href="mailto:arthur-saldanha@live.com">arthur-saldanha@live.com</a></li>
+        <li><a href="https://portal.cfm.org.br/" target="_blank">Verificar CRM MG 104895</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Dr. Arthur Ernani · Todos os direitos reservados</span>
+    <span>CRM MG 104895</span>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/5585999968434?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" class="wa-float">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+// ── TABS ──
+function switchTab(id, el) {
+  document.querySelectorAll('.card-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.card-panel').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
+}
+
+// ── TIPO DE CONSULTA ──
+let tipoAtual = 'consulta';
+function selectTipo(tipo) {
+  tipoAtual = tipo;
+  ['consulta','exame','retorno'].forEach(t => {
+    document.getElementById('tipo-' + t).classList.toggle('active', t === tipo);
+  });
+  const examWrap = document.getElementById('exam-selector-wrap');
+  if (tipo === 'exame') examWrap.style.display = 'flex';
+  else examWrap.style.display = 'none';
+}
+
+// ── CALENDÁRIO ──
+const months = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+let curDate = new Date(2026, 3, 1);
+let selDay = null, selSlot = null, curStep = 1;
+
+const slots = {
+  1:['08:00','09:00','10:00','14:00','15:00'],
+  2:['08:00','10:00','11:00','14:00','16:00'],
+  3:['09:00','10:00','15:00','16:00'],
+  7:['08:00','09:00','10:00','11:00','14:00','15:00','16:00'],
+  8:['08:00','09:00','11:00','14:00'],
+  9:['09:00','10:00','14:00','16:00'],
+  10:['08:00','11:00','14:00','15:00'],
+  14:['08:00','09:00','10:00','11:00','14:00','15:00'],
+  15:['09:00','10:00','14:00','15:00'],
+  16:['08:00','10:00','14:00','16:00'],
+  17:['09:00','11:00','14:00','15:00'],
+  21:['08:00','09:00','10:00','14:00','15:00'],
+  22:['10:00','11:00','14:00','15:00'],
+  23:['08:00','09:00','14:00'],
+  24:['09:00','10:00','15:00'],
+  28:['08:00','09:00','10:00','14:00'],
+  29:['10:00','11:00','14:00','15:00'],
+  30:['08:00','09:00','10:00','14:00'],
+};
+const booked = { 7:['10:00','15:00'], 14:['09:00','14:00'], 21:['11:00'] };
+
+function renderCal() {
+  const y = curDate.getFullYear(), m = curDate.getMonth();
+  document.getElementById('cal-month').textContent = months[m] + ' ' + y;
+  const first = new Date(y, m, 1).getDay();
+  const total = new Date(y, m+1, 0).getDate();
+  const today = new Date();
+  const c = document.getElementById('cal-days');
+  c.innerHTML = '';
+  for (let i=0;i<first;i++) { const d=document.createElement('div'); d.className='cal-day empty'; c.appendChild(d); }
+  for (let d=1;d<=total;d++) {
+    const el = document.createElement('div');
+    el.className='cal-day'; el.textContent=d;
+    const dow = new Date(y,m,d).getDay();
+    const past = new Date(y,m,d) < new Date(today.getFullYear(),today.getMonth(),today.getDate());
+    if (past || dow===0) { el.classList.add('disabled'); }
+    else {
+      if (slots[d]) el.classList.add('has-slots');
+      if (d===today.getDate()&&m===today.getMonth()&&y===today.getFullYear()) el.classList.add('today');
+      if (selDay===d) el.classList.add('selected');
+      el.addEventListener('click', ()=>pickDay(d,el));
+    }
+    c.appendChild(el);
+  }
+}
+
+function pickDay(d, el) {
+  document.querySelectorAll('.cal-day').forEach(c=>c.classList.remove('selected'));
+  el.classList.add('selected');
+  selDay=d; selSlot=null;
+  document.getElementById('slots-date-label').textContent = d + ' de ' + months[curDate.getMonth()];
+  renderSlots(d);
+  document.getElementById('slots-sec').classList.add('visible');
+  updateNav();
+}
+
+function renderSlots(d) {
+  const g = document.getElementById('slots-grid');
+  g.innerHTML='';
+  const sl = slots[d]||[];
+  const bk = booked[d]||[];
+  if (!sl.length) { g.innerHTML='<p style="color:var(--white-muted);font-size:12px;grid-column:1/-1">Sem horários disponíveis.</p>'; return; }
+  sl.forEach(t=>{
+    const el=document.createElement('div');
+    el.className='time-slot'; el.textContent=t;
+    if (bk.includes(t)) el.classList.add('booked');
+    else el.addEventListener('click',()=>{
+      document.querySelectorAll('.time-slot').forEach(s=>s.classList.remove('selected'));
+      el.classList.add('selected');
+      selSlot=t;
+      document.getElementById('slot-preview').textContent = d+'/'+months[curDate.getMonth()].substring(0,3)+' • '+t;
+      updateNav();
+    });
+    g.appendChild(el);
+  });
+}
+
+document.getElementById('prev-m').addEventListener('click',()=>{curDate.setMonth(curDate.getMonth()-1);selDay=null;selSlot=null;document.getElementById('slots-sec').classList.remove('visible');document.getElementById('slot-preview').textContent='';renderCal();updateNav();});
+document.getElementById('next-m').addEventListener('click',()=>{curDate.setMonth(curDate.getMonth()+1);selDay=null;selSlot=null;document.getElementById('slots-sec').classList.remove('visible');document.getElementById('slot-preview').textContent='';renderCal();updateNav();});
+
+// ── EXAME SELECTOR ──
+let selExam = '';
+function selectExam(el, exam) {
+  document.querySelectorAll('.exam-opt').forEach(o=>o.classList.remove('selected'));
+  el.classList.add('selected');
+  selExam = exam;
+}
+
+// ── STEP NAV ──
+function updateNav() {
+  const btn = document.getElementById('btn-next');
+  if (curStep===1) btn.disabled=!(selDay&&selSlot);
+  else if (curStep===2) {
+    const n=document.getElementById('f-nome').value.trim();
+    const t=document.getElementById('f-tel').value.trim();
+    btn.disabled=!(n&&t);
+  }
+}
+
+document.querySelectorAll('.form-input,.form-select,.form-textarea').forEach(el=>{
+  el.addEventListener('input',()=>{if(curStep===2)updateNav();});
+});
+
+function setPill(n, state) {
+  const p = document.getElementById('pill-'+n);
+  p.classList.remove('active','done');
+  if (state) p.classList.add(state);
+}
+
+function goNext() {
+  if (curStep===1) {
+    curStep=2;
+    document.getElementById('step-1').classList.remove('active');
+    document.getElementById('exam-selector-wrap').style.display = tipoAtual==='exame'?'flex':'none';
+    document.getElementById('step-2').classList.add('active');
+    document.getElementById('btn-back').style.visibility='visible';
+    document.getElementById('btn-next').textContent='Confirmar ✓';
+    document.getElementById('form-title').textContent='Seus dados';
+    setPill(1,'done'); setPill(2,'active');
+    updateNav();
+  } else if (curStep===2) {
+    curStep=3;
+    document.getElementById('step-2').classList.remove('active');
+    document.getElementById('step-3').classList.add('active');
+    setPill(2,'done'); setPill(3,'active');
+    // Preenche resumo
+    const tipoLabel = {consulta:'Consulta Clínica',exame:'Solicitação de Exames'+( selExam ? ' — '+selExam : ''),retorno:'Retorno / Análise de Exames'};
+    document.getElementById('c-tipo').textContent = tipoLabel[tipoAtual];
+    document.getElementById('c-data').textContent = selDay + ' de ' + months[curDate.getMonth()] + ' de ' + curDate.getFullYear();
+    document.getElementById('c-hora').textContent = selSlot;
+    document.getElementById('c-nome').textContent = document.getElementById('f-nome').value;
+    document.getElementById('btn-next').style.display='none';
+    document.getElementById('btn-back').style.visibility='hidden';
+    document.getElementById('slot-preview').textContent='';
+    document.getElementById('form-title').textContent='Confirmação';
+    // Automação: monta msg WhatsApp
+    const tel = document.getElementById('f-tel').value;
+    const queixa = document.getElementById('f-queixa').value;
+    const msg = encodeURIComponent(`Olá Dr. Arthur!\n\nAcabei de agendar pelo site:\n• Tipo: ${tipoLabel[tipoAtual]}\n• Data: ${selDay}/${months[curDate.getMonth()]}/${curDate.getFullYear()}\n• Horário: ${selSlot}\n• Nome: ${document.getElementById('f-nome').value}\n• Motivo: ${queixa||'Não informado'}\n\nAguardo confirmação!`);
+    document.querySelector('.confirm-wrap a').href = 'https://wa.me/5585999968434?text=' + msg;
+  }
+}
+
+function goBack() {
+  if (curStep===2) {
+    curStep=1;
+    document.getElementById('step-2').classList.remove('active');
+    document.getElementById('step-1').classList.add('active');
+    document.getElementById('btn-back').style.visibility='hidden';
+    document.getElementById('btn-next').textContent='Continuar →';
+    document.getElementById('btn-next').style.display='flex';
+    document.getElementById('form-title').textContent='Escolha a data e horário';
+    setPill(2,''); setPill(1,'active');
+    if (selDay&&selSlot) document.getElementById('slot-preview').textContent = selDay+'/'+months[curDate.getMonth()].substring(0,3)+' • '+selSlot;
+    updateNav();
+  }
+}
+
+// ── FAQ ──
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const ans = item.querySelector('.faq-answer');
+  const open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-answer').style.maxHeight='0';});
+  if (!open) { item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight+'px'; }
+}
+
+renderCal();
+</script>
+</body>
+</html>
