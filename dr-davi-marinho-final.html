@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Davi Marinho — Médico de Família | Consulta Online</title>
+<meta name="description" content="Dr. Davi Marinho, CRM SP 255415. Médico de Família e Comunidade. Residência Hospital Santa Marcelina/SP. Consultas online humanizadas, atestados e receitas digitais.">
+<meta property="og:title" content="Dr. Davi Marinho — Médico de Família e Comunidade">
+<meta property="og:description" content="Medicina centrada na pessoa. Consultas online com atestado e receita digital de validade legal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════
+   DESIGN SYSTEM — Clínica Online Popular
+   Tema escuro idêntico ao repositório principal
+   Médico: Dr. Davi Marinho
+══════════════════════════════════════════ */
+:root {
+  --bg:          #0D1117;
+  --bg-card:     #161B22;
+  --bg-card2:    #1C2333;
+  --bg-hover:    rgba(22,27,34,0.8);
+  --green:       #2EA043;
+  --green-l:     #3FB950;
+  --green-xl:    #56D364;
+  --green-glow:  rgba(46,160,67,0.15);
+  --green-bdr:   rgba(46,160,67,0.28);
+  --green-bdr2:  rgba(46,160,67,0.5);
+  --white:       #E6EDF3;
+  --muted:       #8B949E;
+  --faint:       rgba(230,237,243,0.05);
+  --bdr:         rgba(230,237,243,0.08);
+  --bdr2:        rgba(230,237,243,0.14);
+  --wa:          #25D366;
+  --r:           10px;
+  --r-lg:        16px;
+  --r-xl:        20px;
+  --shadow:      0 8px 40px rgba(0,0,0,0.5);
+  --glow:        0 0 48px rgba(46,160,67,0.12);
+  --glow-lg:     0 0 80px rgba(46,160,67,0.18);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--white);line-height:1.6;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--green);border-radius:3px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:62px;padding:0 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(13,17,23,0.9);
+  backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--bdr);
+}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-logo-box{
+  width:34px;height:34px;border-radius:9px;
+  background:linear-gradient(135deg,var(--green),#1d6b2a);
+  display:flex;align-items:center;justify-content:center;font-size:16px;
+  box-shadow:0 0 16px rgba(46,160,67,0.35);
+}
+.nav-brand-text{line-height:1.15}
+.nav-brand-name{font-size:13px;font-weight:700;color:var(--white)}
+.nav-brand-sub{font-size:10px;color:var(--muted)}
+.nav-mid{display:flex;gap:2px}
+.nav-lnk{
+  padding:7px 14px;border-radius:7px;
+  font-size:13px;color:var(--muted);
+  transition:all .2s;
+}
+.nav-lnk:hover{background:var(--faint);color:var(--white)}
+.nav-wa{
+  display:flex;align-items:center;gap:7px;
+  background:var(--wa);color:#fff;
+  padding:8px 18px;border-radius:9px;
+  font-size:13px;font-weight:700;
+  transition:all .25s;
+  box-shadow:0 2px 16px rgba(37,211,102,0.3);
+}
+.nav-wa:hover{background:#20bd5a;transform:translateY(-1px);box-shadow:0 6px 28px rgba(37,211,102,0.45)}
+.nav-wa svg{width:14px;height:14px;flex-shrink:0}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  padding:62px 48px 0;
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+}
+.hero-radial{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 55% at 55% 0%,rgba(46,160,67,0.13) 0%,transparent 55%),
+    radial-gradient(ellipse 35% 45% at 90% 70%,rgba(46,160,67,0.07) 0%,transparent 55%),
+    radial-gradient(ellipse 25% 30% at 5% 80%,rgba(46,160,67,0.05) 0%,transparent 60%);
+}
+.hero-grid{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(var(--bdr) 1px,transparent 1px),
+    linear-gradient(90deg,var(--bdr) 1px,transparent 1px);
+  background-size:56px 56px;opacity:.25;
+}
+.hero-inner{
+  position:relative;z-index:1;
+  max-width:1140px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1fr 400px;gap:56px;
+  align-items:center;padding:80px 0 64px;
+}
+
+/* Left */
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--green-glow);border:1px solid var(--green-bdr);
+  color:var(--green-l);padding:5px 14px;border-radius:100px;
+  font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  margin-bottom:20px;width:fit-content;
+  animation:fu .5s ease both;
+}
+.hero-tag::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--green);box-shadow:0 0 8px var(--green);
+  animation:pulse 2.2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+
+.hero h1{
+  font-size:clamp(36px,4.8vw,66px);
+  font-weight:900;line-height:1.05;color:var(--white);
+  margin-bottom:22px;letter-spacing:-.02em;
+  animation:fu .5s .07s ease both;
+}
+.hero h1 em{font-style:italic;color:var(--green-l)}
+.hero h1 span.dim{color:var(--muted);font-weight:300}
+
+.hero-bio{
+  font-size:15px;color:var(--muted);line-height:1.85;
+  max-width:500px;margin-bottom:36px;font-weight:400;
+  animation:fu .5s .14s ease both;
+}
+
+.creds{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-bottom:36px;
+  animation:fu .5s .18s ease both;
+}
+.cred-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--bg-card);border:1px solid var(--bdr2);
+  color:var(--muted);padding:5px 12px;border-radius:7px;
+  font-size:12px;font-weight:500;
+  transition:all .2s;
+}
+.cred-badge:hover{border-color:var(--green-bdr);color:var(--white)}
+
+.hero-btns{
+  display:flex;gap:12px;flex-wrap:wrap;
+  animation:fu .5s .22s ease both;
+}
+.btn-wa{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--wa);color:#fff;
+  padding:14px 28px;border-radius:10px;
+  font-size:15px;font-weight:700;
+  box-shadow:0 4px 24px rgba(37,211,102,0.35);
+  transition:all .25s;
+}
+.btn-wa:hover{background:#20bd5a;transform:translateY(-2px);box-shadow:0 8px 36px rgba(37,211,102,.5)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid var(--bdr2);color:var(--white);
+  padding:14px 28px;border-radius:10px;
+  font-size:15px;font-weight:500;
+  transition:all .25s;
+}
+.btn-ghost:hover{border-color:var(--green-bdr2);color:var(--green-l);background:var(--green-glow)}
+
+.hero-trust{
+  display:flex;gap:28px;flex-wrap:wrap;
+  margin-top:44px;padding-top:32px;
+  border-top:1px solid var(--bdr);
+  animation:fu .5s .28s ease both;
+}
+.trust-it{display:flex;align-items:center;gap:9px}
+.trust-ico{font-size:18px}
+.trust-txt{line-height:1.3}
+.trust-txt strong{display:block;font-size:13px;font-weight:600;color:var(--white)}
+.trust-txt small{font-size:11px;color:var(--muted)}
+
+/* Right — Doctor Card */
+.doc-card{
+  background:var(--bg-card);
+  border:1px solid var(--bdr2);
+  border-radius:var(--r-xl);
+  overflow:hidden;
+  box-shadow:var(--shadow),var(--glow);
+  animation:fu .6s .1s ease both;
+}
+.doc-card-header{
+  background:linear-gradient(145deg,#161B22,#1C2333);
+  padding:28px 28px 0;
+  border-bottom:1px solid var(--bdr);
+  position:relative;overflow:hidden;
+}
+.doc-card-header::after{
+  content:'';position:absolute;
+  top:-50px;right:-50px;
+  width:140px;height:140px;
+  background:radial-gradient(circle,rgba(46,160,67,.18) 0%,transparent 70%);
+  pointer-events:none;
+}
+.doc-avatar-row{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.doc-avatar{
+  width:60px;height:60px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,#2EA043,#1d6b2a);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;font-weight:800;color:#fff;letter-spacing:-.5px;
+  border:2px solid var(--green-bdr2);
+  box-shadow:0 0 20px rgba(46,160,67,.28);
+}
+.doc-info-name{font-size:16px;font-weight:800;color:var(--white);margin-bottom:2px}
+.doc-info-spec{font-size:12px;color:var(--muted);margin-bottom:6px}
+.doc-crm{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--green-glow);border:1px solid var(--green-bdr);
+  color:var(--green-l);padding:3px 10px;border-radius:5px;font-size:11px;font-weight:600;
+}
+.doc-tabs{
+  display:flex;margin:0 -28px;
+}
+.doc-tab{
+  flex:1;padding:11px;text-align:center;
+  font-size:12px;font-weight:500;color:var(--muted);
+  cursor:pointer;border-bottom:2px solid transparent;
+  transition:all .2s;
+}
+.doc-tab.on{color:var(--green-l);border-color:var(--green)}
+.doc-body{padding:22px 28px}
+.doc-panel{display:none}
+.doc-panel.on{display:block}
+
+.svc-list{display:flex;flex-direction:column;gap:9px}
+.svc-row{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 13px;border-radius:8px;
+  background:var(--faint);border:1px solid var(--bdr);
+  font-size:13px;color:var(--white);
+  transition:all .2s;
+}
+.svc-row:hover{border-color:var(--green-bdr);background:var(--green-glow)}
+.svc-ico{font-size:15px;flex-shrink:0}
+.svc-chk{margin-left:auto;color:var(--green-l);font-size:13px}
+
+.diff-list{display:flex;flex-direction:column;gap:9px}
+.diff-row{
+  display:flex;gap:10px;
+  padding:11px 13px;border-radius:8px;
+  background:var(--faint);border:1px solid var(--bdr);
+}
+.diff-ico{font-size:15px;flex-shrink:0;margin-top:1px}
+.diff-txt{font-size:12px;color:var(--white);line-height:1.5}
+.diff-txt strong{display:block;font-size:12px;color:var(--white);font-weight:600}
+.diff-txt span{color:var(--muted);font-size:11px}
+
+.doc-cta{
+  margin-top:18px;width:100%;
+  background:var(--wa);color:#fff;
+  border:none;border-radius:9px;padding:13px;
+  font-family:'Inter',sans-serif;font-size:14px;font-weight:700;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:all .25s;
+}
+.doc-cta:hover{background:#20bd5a;transform:translateY(-1px)}
+
+/* ── STATS ── */
+.stats{
+  border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);
+  background:var(--bg-card);padding:36px 48px;
+}
+.stats-row{
+  max-width:1140px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(5,1fr);gap:24px;
+}
+.stat{text-align:center}
+.stat-n{font-size:34px;font-weight:900;color:var(--green-l);line-height:1;margin-bottom:6px}
+.stat-l{font-size:12px;color:var(--muted);font-weight:400}
+
+/* ── SECTION WRAPPER ── */
+.sec{padding:96px 48px;max-width:1140px;margin:0 auto}
+.sec-full-bg{background:var(--bg-card);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
+.sec-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--green-glow);border:1px solid var(--green-bdr);
+  color:var(--green-l);padding:5px 12px;border-radius:6px;
+  font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:14px;
+}
+.sec h2{font-size:clamp(26px,3.2vw,42px);font-weight:900;color:var(--white);margin-bottom:14px;letter-spacing:-.02em}
+.sec .lead{font-size:15px;color:var(--muted);max-width:560px;line-height:1.8}
+
+/* ── ABOUT GRID ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px;align-items:start}
+
+.feat-cards{display:flex;flex-direction:column;gap:14px}
+.feat{
+  display:flex;gap:14px;
+  background:var(--bg-card);border:1px solid var(--bdr);
+  border-radius:var(--r);padding:18px;
+  transition:all .25s;
+}
+.feat:hover{border-color:var(--green-bdr);box-shadow:var(--glow);transform:translateX(4px)}
+.feat-ico{
+  width:40px;height:40px;border-radius:9px;flex-shrink:0;
+  background:var(--green-glow);border:1px solid var(--green-bdr);
+  display:flex;align-items:center;justify-content:center;font-size:19px;
+}
+.feat-body h4{font-size:13px;font-weight:700;color:var(--white);margin-bottom:3px}
+.feat-body p{font-size:12px;color:var(--muted);line-height:1.6}
+
+/* Formação timeline */
+.timeline-card{
+  background:var(--bg-card);border:1px solid var(--bdr);
+  border-radius:var(--r-lg);padding:28px;
+  position:sticky;top:72px;
+}
+.timeline-card h3{font-size:15px;font-weight:700;color:var(--white);margin-bottom:24px}
+.tl{display:flex;flex-direction:column;gap:0;position:relative}
+.tl::before{
+  content:'';position:absolute;left:14px;top:6px;bottom:6px;width:1px;
+  background:linear-gradient(to bottom,var(--green),var(--bdr));
+}
+.tl-item{display:flex;gap:16px;padding:14px 0;position:relative}
+.tl-dot{
+  width:28px;height:28px;border-radius:50%;flex-shrink:0;
+  background:var(--green-glow);border:1px solid var(--green-bdr);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;position:relative;z-index:1;
+  margin-top:2px;
+}
+.tl-content h4{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px}
+.tl-content p{font-size:11px;color:var(--muted);line-height:1.5}
+.tl-content .tl-year{
+  display:inline-block;font-size:10px;font-weight:600;
+  color:var(--green-l);background:var(--green-glow);
+  border:1px solid var(--green-bdr);padding:1px 7px;border-radius:4px;
+  margin-bottom:4px;
+}
+
+/* ── AGENDAMENTO ── */
+.sched-layout{
+  display:grid;grid-template-columns:300px 1fr;gap:28px;
+  margin-top:48px;
+}
+
+/* Coluna esquerda */
+.sched-left{display:flex;flex-direction:column;gap:14px}
+
+.tipo-card{
+  background:var(--bg-card);border:1px solid var(--bdr);
+  border-radius:var(--r);padding:18px;cursor:pointer;
+  transition:all .2s;position:relative;overflow:hidden;
+}
+.tipo-card:hover{border-color:var(--green-bdr)}
+.tipo-card.on{border-color:var(--green);background:var(--green-glow);box-shadow:0 0 0 1px var(--green)}
+.tipo-card.on::after{
+  content:'✓';position:absolute;top:10px;right:12px;
+  width:18px;height:18px;border-radius:50%;
+  background:var(--green);color:#fff;font-size:10px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  line-height:18px;text-align:center;
+}
+.tipo-ico{font-size:22px;margin-bottom:7px;display:block}
+.tipo-ttl{font-size:13px;font-weight:700;color:var(--white);margin-bottom:3px}
+.tipo-dsc{font-size:11px;color:var(--muted);line-height:1.5}
+
+.info-box{
+  background:var(--bg-card);border:1px solid var(--bdr);
+  border-radius:var(--r);padding:18px;
+}
+.info-box-h{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
+.info-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:7px 0;border-bottom:1px solid var(--bdr);font-size:12px;
+}
+.info-row:last-child{border-bottom:none}
+.info-k{color:var(--muted)}
+.info-v{color:var(--white);font-weight:500}
+.info-v.g{color:var(--green-l)}
+
+/* Formulário */
+.sched-form{
+  background:var(--bg-card);border:1px solid var(--bdr);
+  border-radius:var(--r-lg);overflow:hidden;
+}
+.sf-head{
+  padding:18px 26px;border-bottom:1px solid var(--bdr);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.sf-title{font-size:14px;font-weight:700;color:var(--white)}
+.sf-pills{display:flex;gap:5px}
+.sf-pill{width:22px;height:5px;border-radius:3px;background:var(--bdr);transition:all .3s}
+.sf-pill.on{background:var(--green)}
+.sf-pill.done{background:var(--green-l);opacity:.5}
+.sf-body{padding:22px 26px}
+.sf-foot{
+  padding:14px 26px;border-top:1px solid var(--bdr);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.slot-prev{font-size:12px;color:var(--green-l);font-weight:600}
+.btn-back-f{
+  background:none;border:1px solid var(--bdr);color:var(--muted);
+  padding:9px 16px;border-radius:7px;
+  font-family:'Inter',sans-serif;font-size:12px;font-weight:500;
+  cursor:pointer;transition:all .2s;
+}
+.btn-back-f:hover{border-color:var(--muted);color:var(--white)}
+.btn-next-f{
+  background:var(--green);color:#fff;border:none;
+  padding:9px 20px;border-radius:7px;
+  font-family:'Inter',sans-serif;font-size:12px;font-weight:700;
+  cursor:pointer;transition:all .2s;
+  display:flex;align-items:center;gap:6px;
+}
+.btn-next-f:hover{background:var(--green-l)}
+.btn-next-f:disabled{opacity:.25;cursor:not-allowed}
+
+/* CALENDÁRIO */
+.cal-step{display:none}
+.cal-step.on{display:block}
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.cal-m{font-size:14px;font-weight:700;color:var(--white)}
+.cal-btn{
+  background:var(--bg-card2);border:1px solid var(--bdr);color:var(--muted);
+  width:28px;height:28px;border-radius:6px;cursor:pointer;
+  font-size:15px;transition:all .2s;
+  display:flex;align-items:center;justify-content:center;
+}
+.cal-btn:hover{border-color:var(--green-bdr);color:var(--green-l)}
+.cal-wk{display:grid;grid-template-columns:repeat(7,1fr);margin-bottom:4px}
+.cal-wd{text-align:center;font-size:10px;color:var(--muted);padding:5px 0;font-weight:600}
+.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.cal-d{
+  aspect-ratio:1;display:flex;align-items:center;justify-content:center;
+  font-size:12px;border-radius:6px;cursor:pointer;
+  color:var(--muted);transition:all .15s;position:relative;
+}
+.cal-d:hover:not(.dis):not(.emp){background:var(--green-glow);color:var(--white)}
+.cal-d.today{color:var(--green-l);font-weight:700}
+.cal-d.sel{background:var(--green)!important;color:#fff!important;font-weight:700}
+.cal-d.dis{color:rgba(139,148,158,.18);cursor:not-allowed}
+.cal-d.has::after{
+  content:'';position:absolute;bottom:3px;
+  width:4px;height:4px;background:var(--green);border-radius:50%;
+}
+
+.slots-blk{margin-top:18px;display:none}
+.slots-blk.on{display:block}
+.slots-lbl{font-size:11px;color:var(--muted);font-weight:600;margin-bottom:9px;letter-spacing:.04em}
+.slots-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+.tslot{
+  padding:8px 4px;border:1px solid var(--bdr);border-radius:6px;
+  text-align:center;font-size:11px;font-weight:600;
+  color:var(--muted);cursor:pointer;background:var(--bg);
+  transition:all .15s;
+}
+.tslot:hover:not(.bk){border-color:var(--green-bdr);color:var(--green-l);background:var(--green-glow)}
+.tslot.sel{background:var(--green);border-color:var(--green);color:#fff}
+.tslot.bk{color:rgba(139,148,158,.2);cursor:not-allowed;text-decoration:line-through}
+
+/* FORM DADOS */
+.data-step{display:none}
+.data-step.on{display:block}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fgroup{display:flex;flex-direction:column;gap:5px}
+.fgroup.full{grid-column:1/-1}
+.flbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.finput,.fsel,.ftxt{
+  background:var(--bg);border:1px solid var(--bdr);
+  color:var(--white);padding:10px 13px;border-radius:7px;
+  font-family:'Inter',sans-serif;font-size:13px;outline:none;
+  transition:border-color .2s;
+}
+.finput:focus,.fsel:focus,.ftxt:focus{border-color:var(--green-bdr2)}
+.finput::placeholder,.ftxt::placeholder{color:rgba(139,148,158,.4)}
+.fsel option{background:var(--bg-card)}
+.ftxt{min-height:78px;resize:vertical;line-height:1.5}
+
+/* Seletor exames */
+.exam-sel{
+  display:grid;grid-template-columns:1fr 1fr;gap:7px;
+  grid-column:1/-1;
+}
+.exam-opt{
+  border:1px solid var(--bdr);border-radius:8px;
+  padding:11px;cursor:pointer;transition:all .2s;
+  display:flex;align-items:center;gap:9px;
+}
+.exam-opt:hover{border-color:var(--green-bdr);background:var(--green-glow)}
+.exam-opt.on{border-color:var(--green);background:var(--green-glow)}
+.exam-opt.on .echeck{opacity:1}
+.eico{font-size:17px;flex-shrink:0}
+.etxt{font-size:12px;color:var(--white);font-weight:500;line-height:1.3;flex:1}
+.echeck{margin-left:auto;color:var(--green);font-size:12px;opacity:0;transition:opacity .2s}
+
+/* CONFIRM */
+.conf-step{display:none;text-align:center}
+.conf-step.on{display:block}
+.conf-ico{font-size:48px;margin-bottom:12px}
+.conf-ttl{font-size:20px;font-weight:900;color:var(--white);margin-bottom:8px}
+.conf-sub{font-size:13px;color:var(--muted);margin-bottom:22px;line-height:1.7;max-width:380px;margin-inline:auto}
+.conf-card{
+  background:var(--bg);border:1px solid var(--bdr);
+  border-radius:var(--r);padding:16px;text-align:left;margin-bottom:18px;
+}
+.conf-row{
+  display:flex;justify-content:space-between;
+  padding:7px 0;border-bottom:1px solid var(--bdr);font-size:12px;
+}
+.conf-row:last-child{border-bottom:none}
+.ck{color:var(--muted)}
+.cv{color:var(--white);font-weight:600}
+.cv.g{color:var(--green-l)}
+
+/* ── REVIEWS ── */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.rev-card{
+  background:var(--bg-card);border:1px solid var(--bdr);
+  border-radius:var(--r-lg);padding:26px;transition:all .25s;
+}
+.rev-card:hover{border-color:var(--green-bdr);box-shadow:var(--glow)}
+.rev-stars{color:#F1C40F;font-size:13px;letter-spacing:2px;margin-bottom:12px}
+.rev-txt{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:18px;font-style:italic}
+.rev-auth{display:flex;align-items:center;gap:10px}
+.rev-av{
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--green),#1d6b2a);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;color:#fff;
+}
+.rev-name{font-size:13px;font-weight:600;color:var(--white)}
+.rev-date{font-size:11px;color:var(--muted)}
+
+/* ── FAQ ── */
+.faq-list{margin-top:44px;display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid var(--bdr)}
+.faq-q{
+  width:100%;background:none;border:none;color:var(--white);
+  font-family:'Inter',sans-serif;font-size:14px;font-weight:500;
+  padding:20px 0;display:flex;justify-content:space-between;align-items:center;
+  cursor:pointer;gap:14px;text-align:left;transition:color .2s;
+}
+.faq-q:hover{color:var(--green-l)}
+.faq-ico{
+  width:20px;height:20px;border-radius:50%;flex-shrink:0;
+  border:1px solid var(--bdr);color:var(--muted);
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;transition:all .3s;
+}
+.faq-item.on .faq-ico{background:var(--green);border-color:var(--green);color:#fff;transform:rotate(45deg)}
+.faq-ans{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-ans-i{font-size:13px;color:var(--muted);line-height:1.85;padding-bottom:20px}
+
+/* ── CTA FINAL ── */
+.cta-sec{padding:96px 48px;text-align:center}
+.cta-box{
+  max-width:620px;margin:0 auto;
+  background:var(--bg-card);border:1px solid var(--green-bdr);
+  border-radius:var(--r-xl);padding:56px 44px;
+  box-shadow:var(--glow-lg);position:relative;overflow:hidden;
+}
+.cta-box::before{
+  content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);
+  width:240px;height:240px;
+  background:radial-gradient(circle,rgba(46,160,67,.14) 0%,transparent 65%);
+  pointer-events:none;
+}
+.cta-box h2{font-size:30px;font-weight:900;color:var(--white);margin-bottom:12px;position:relative;letter-spacing:-.02em}
+.cta-box p{font-size:14px;color:var(--muted);margin-bottom:28px;line-height:1.7;position:relative}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--bg-card);border-top:1px solid var(--bdr);
+  padding:56px 48px 28px;
+}
+.foot-grid{
+  max-width:1140px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;
+  padding-bottom:44px;border-bottom:1px solid var(--bdr);
+}
+.foot-brand{font-size:17px;font-weight:900;color:var(--white);margin-bottom:10px;letter-spacing:-.01em}
+.foot-desc{font-size:12px;color:var(--muted);line-height:1.8;max-width:240px}
+.foot-legal{font-size:11px;color:rgba(139,148,158,.35);margin-top:14px;line-height:1.7}
+.foot-col h4{font-size:10px;font-weight:700;color:var(--green-l);text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot-links a{font-size:12px;color:var(--muted);transition:color .2s}
+.foot-links a:hover{color:var(--white)}
+.foot-btm{
+  max-width:1140px;margin:22px auto 0;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:11px;color:rgba(139,148,158,.3);
+}
+
+/* WA FLOAT */
+.wa-float{
+  position:fixed;bottom:26px;right:26px;z-index:150;
+  width:54px;height:54px;background:var(--wa);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 24px rgba(37,211,102,.5);
+  transition:transform .2s,box-shadow .2s;
+  animation:fu 1s 2s ease both;
+}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 8px 40px rgba(37,211,102,.65)}
+
+/* UTILS */
+@keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+svg.wa-ic{fill:white}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:0 20px}
+  .nav-mid{display:none}
+  .hero{padding:62px 20px 0}
+  .hero-inner{grid-template-columns:1fr;padding:60px 0 48px}
+  .doc-card{display:none}
+  .stats-row{grid-template-columns:repeat(3,1fr)}
+  .sec{padding:64px 20px}
+  .about-grid{grid-template-columns:1fr}
+  .timeline-card{position:static}
+  .sec-full-bg .sec{padding:64px 20px}
+  .sched-layout{grid-template-columns:1fr}
+  .slots-grid{grid-template-columns:repeat(3,1fr)}
+  .rev-grid{grid-template-columns:1fr}
+  .cta-sec{padding:64px 20px}
+  .cta-box{padding:40px 24px}
+  footer{padding:48px 20px 24px}
+  .foot-grid{grid-template-columns:1fr;gap:28px}
+  .fg{grid-template-columns:1fr}
+  .exam-sel{grid-template-columns:1fr 1fr}
+  .stats{padding:28px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-logo-box">🏥</div>
+    <div class="nav-brand-text">
+      <div class="nav-brand-name">Dr. Davi Marinho</div>
+      <div class="nav-brand-sub">Clínica Online Popular</div>
+    </div>
+  </div>
+  <div class="nav-mid">
+    <a href="#sobre" class="nav-lnk">Sobre</a>
+    <a href="#agendamento" class="nav-lnk">Agendar</a>
+    <a href="#avaliacoes" class="nav-lnk">Avaliações</a>
+    <a href="#faq" class="nav-lnk">FAQ</a>
+  </div>
+  <a href="https://wa.me/5585985470174?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" class="nav-wa">
+    <svg viewBox="0 0 24 24" class="wa-ic"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    WhatsApp
+  </a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-radial"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+
+    <!-- LEFT -->
+    <div>
+      <div class="hero-tag">Médico de Família e Comunidade · CRM SP 255415</div>
+      <h1>
+        Cuidado <em>centrado</em><br>
+        na pessoa.<br>
+        <span class="dim">Online. Humanizada.</span>
+      </h1>
+      <p class="hero-bio">
+        Residência em Medicina de Família pelo Hospital Santa Marcelina/SP. 
+        Pós-graduação em andamento pela USP — HC Ribeirão Preto. 
+        Dois anos no SUS da Zona Leste de São Paulo. 
+        Escuta ativa, vínculo real e cuidado longitudinal — onde você estiver.
+      </p>
+      <div class="creds">
+        <div class="cred-badge">🏥 Hospital Santa Marcelina · SP</div>
+        <div class="cred-badge">🎓 USP — HC Ribeirão Preto</div>
+        <div class="cred-badge">🌍 Estágio em Lisboa · Portugal</div>
+        <div class="cred-badge">🗣️ Inglês & Espanhol fluente</div>
+        <div class="cred-badge">❤️ SUS · 2 anos Zona Leste SP</div>
+      </div>
+      <div class="hero-btns">
+        <a href="https://wa.me/5585985470174?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" class="btn-wa">
+          <svg width="18" height="18" viewBox="0 0 24 24" class="wa-ic"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a href="#agendamento" class="btn-ghost">📅 Agendar Online</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-it"><span class="trust-ico">🔒</span><div class="trust-txt"><strong>Sem depósito</strong><small>Pague só na consulta</small></div></div>
+        <div class="trust-it"><span class="trust-ico">📄</span><div class="trust-txt"><strong>Validade legal</strong><small>Certificado ICP-Brasil</small></div></div>
+        <div class="trust-it"><span class="trust-ico">🔄</span><div class="trust-txt"><strong>Retorno incluso</strong><small>Sem custo adicional</small></div></div>
+      </div>
+    </div>
+
+    <!-- RIGHT — CARD -->
+    <div class="doc-card">
+      <div class="doc-card-header">
+        <div class="doc-avatar-row">
+          <div class="doc-avatar">DM</div>
+          <div>
+            <div class="doc-info-name">Dr. Davi Marinho</div>
+            <div class="doc-info-spec">Médico de Família e Comunidade</div>
+            <div class="doc-crm">✓ CRM SP 255415</div>
+          </div>
+        </div>
+        <div class="doc-tabs">
+          <div class="doc-tab on" onclick="switchDocTab('svc',this)">Serviços</div>
+          <div class="doc-tab" onclick="switchDocTab('diff',this)">Diferenciais</div>
+        </div>
+      </div>
+      <div class="doc-body">
+        <div class="doc-panel on" id="tab-svc">
+          <div class="svc-list">
+            <div class="svc-row"><span class="svc-ico">🩺</span>Consulta clínica online<span class="svc-chk">✓</span></div>
+            <div class="svc-row"><span class="svc-ico">👨‍👩‍👧</span>Saúde da família integral<span class="svc-chk">✓</span></div>
+            <div class="svc-row"><span class="svc-ico">📋</span>Atestado médico digital<span class="svc-chk">✓</span></div>
+            <div class="svc-row"><span class="svc-ico">💊</span>Receita médica digital<span class="svc-chk">✓</span></div>
+            <div class="svc-row"><span class="svc-ico">🔬</span>Solicitação de exames<span class="svc-chk">✓</span></div>
+            <div class="svc-row"><span class="svc-ico">🔄</span>Retorno sem custo extra<span class="svc-chk">✓</span></div>
+          </div>
+        </div>
+        <div class="doc-panel" id="tab-diff">
+          <div class="diff-list">
+            <div class="diff-row"><span class="diff-ico">🏥</span><div class="diff-txt"><strong>Residência Médica · SP</strong><span>Hospital Santa Marcelina — Medicina de Família e Comunidade</span></div></div>
+            <div class="diff-row"><span class="diff-ico">🎓</span><div class="diff-txt"><strong>USP — HC Ribeirão Preto</strong><span>Pós-graduação em Gestão e Preceptoria (em curso)</span></div></div>
+            <div class="diff-row"><span class="diff-ico">🌍</span><div class="diff-txt"><strong>Estágio Internacional</strong><span>30 dias no Sistema Nacional de Saúde de Portugal — Lisboa</span></div></div>
+            <div class="diff-row"><span class="diff-ico">❤️</span><div class="diff-txt"><strong>2 anos no SUS · Zona Leste SP</strong><span>Estratégia de Saúde da Família em unidades de atenção primária</span></div></div>
+          </div>
+        </div>
+        <a href="https://wa.me/5585985470174?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" class="doc-cta">
+          <svg width="15" height="15" viewBox="0 0 24 24" class="wa-ic"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Falar com Dr. Davi
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS ══ -->
+<div class="stats">
+  <div class="stats-row">
+    <div class="stat"><div class="stat-n">MFC</div><div class="stat-l">Especialista registrado</div></div>
+    <div class="stat"><div class="stat-n">USP</div><div class="stat-l">Pós-graduação em curso</div></div>
+    <div class="stat"><div class="stat-n">4.9★</div><div class="stat-l">Avaliação dos pacientes</div></div>
+    <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Documentos legalizados</div></div>
+    <div class="stat"><div class="stat-n">PT/EN/ES</div><div class="stat-l">Idiomas de atendimento</div></div>
+  </div>
+</div>
+
+<!-- ══ SOBRE ══ -->
+<div id="sobre">
+  <div class="sec">
+    <div class="sec-tag">Sobre o médico</div>
+    <h2>Método clínico centrado<br>na pessoa.</h2>
+    <p class="lead">Não trato diagnósticos — cuido de pessoas. Cada consulta começa pela sua história, pelo seu contexto familiar, social e emocional. Esse é o fundamento da Medicina de Família e Comunidade.</p>
+
+    <div class="about-grid">
+      <div class="feat-cards">
+        <div class="feat">
+          <div class="feat-ico">👂</div>
+          <div class="feat-body">
+            <h4>Escuta ativa e longitudinal</h4>
+            <p>Atendo pessoas de todas as idades com foco no vínculo de longo prazo. Conheço meus pacientes, não apenas suas queixas.</p>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-ico">🧬</div>
+          <div class="feat-body">
+            <h4>Baseado em evidências</h4>
+            <p>Abordagem resolutiva e criteriosa na solicitação de exames — evitando excessos prejudiciais e desnecessários ao paciente.</p>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-ico">🌐</div>
+          <div class="feat-body">
+            <h4>Fluência em 3 idiomas</h4>
+            <p>Atendimento em português, inglês e espanhol. Disponível para brasileiros no exterior ou pacientes estrangeiros.</p>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-ico">📱</div>
+          <div class="feat-body">
+            <h4>Documentos via plataforma CFM</h4>
+            <p>Atestados e receitas emitidos por plataformas reconhecidas pelo CFM, enviados por e-mail ou SMS. Validade legal total.</p>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-ico">🔄</div>
+          <div class="feat-body">
+            <h4>Retorno gratuito para exames</h4>
+            <p>Solicitou exames? O retorno para avaliação dos resultados não tem custo adicional — promovendo cuidado longitudinal real.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIMELINE FORMAÇÃO -->
+      <div class="timeline-card">
+        <h3>📚 Formação & Trajetória</h3>
+        <div class="tl">
+          <div class="tl-item">
+            <div class="tl-dot">🎓</div>
+            <div class="tl-content">
+              <div class="tl-year">Em curso — 2025</div>
+              <h4>Pós-grad. Gestão & Preceptoria</h4>
+              <p>USP — Hospital das Clínicas de Ribeirão Preto. Ano adicional em Medicina de Família.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🏥</div>
+            <div class="tl-content">
+              <div class="tl-year">2022–2024</div>
+              <h4>Residência Médica · MFC</h4>
+              <p>Hospital Santa Marcelina — São Paulo. Medicina de Família e Comunidade.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">❤️</div>
+            <div class="tl-content">
+              <div class="tl-year">2022–2024</div>
+              <h4>SUS — Zona Leste de SP</h4>
+              <p>Médico 20h na Estratégia de Saúde da Família. UBSs de atenção primária.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🌍</div>
+            <div class="tl-content">
+              <div class="tl-year">2022</div>
+              <h4>Estágio Internacional · Lisboa</h4>
+              <p>30 dias no SNS de Portugal — conhecimento de saúde primária europeia.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🏛️</div>
+            <div class="tl-content">
+              <div class="tl-year">2017–2022</div>
+              <h4>Medicina · UNIFOR</h4>
+              <p>Universidade de Fortaleza. Graduação com estágios em atenção primária, secundária e terciária.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ AGENDAMENTO ══ -->
+<div class="sec-full-bg" id="agendamento">
+  <div class="sec">
+    <div class="sec-tag">Agendamento Online</div>
+    <h2>Agende consulta<br>ou solicitação de exame.</h2>
+    <p class="lead">Escolha o tipo de atendimento, data e horário. Confirmação e link da videochamada enviados via WhatsApp.</p>
+
+    <div class="sched-layout">
+
+      <!-- OPÇÕES -->
+      <div class="sched-left">
+        <div class="tipo-card on" id="tipo-consulta" onclick="selectTipo('consulta')">
+          <span class="tipo-ico">🩺</span>
+          <div class="tipo-ttl">Consulta Clínica</div>
+          <div class="tipo-dsc">Atendimento geral, queixas, orientações, atestados e receitas.</div>
+        </div>
+        <div class="tipo-card" id="tipo-familia" onclick="selectTipo('familia')">
+          <span class="tipo-ico">👨‍👩‍👧</span>
+          <div class="tipo-ttl">Saúde da Família</div>
+          <div class="tipo-dsc">Abordagem integral com contexto familiar, social e emocional — método MFC.</div>
+        </div>
+        <div class="tipo-card" id="tipo-exame" onclick="selectTipo('exame')">
+          <span class="tipo-ico">🔬</span>
+          <div class="tipo-ttl">Solicitação de Exames</div>
+          <div class="tipo-dsc">Pedido criterioso de exames laboratoriais ou de imagem.</div>
+        </div>
+        <div class="tipo-card" id="tipo-retorno" onclick="selectTipo('retorno')">
+          <span class="tipo-ico">🔄</span>
+          <div class="tipo-ttl">Retorno / Análise</div>
+          <div class="tipo-dsc">Avaliação de resultados. Sem custo adicional de consulta.</div>
+        </div>
+        <div class="info-box">
+          <div class="info-box-h">Informações</div>
+          <div class="info-row"><span class="info-k">Médico</span><span class="info-v">Dr. Davi Marinho</span></div>
+          <div class="info-row"><span class="info-k">Especialidade</span><span class="info-v">MFC · CRM SP 255415</span></div>
+          <div class="info-row"><span class="info-k">Pagamento</span><span class="info-v">Pós-consulta · PIX</span></div>
+          <div class="info-row"><span class="info-k">Depósito</span><span class="info-v g">✗ Não exigido</span></div>
+          <div class="info-row"><span class="info-k">Retorno exames</span><span class="info-v g">✓ Incluso</span></div>
+          <div class="info-row"><span class="info-k">Idiomas</span><span class="info-v">PT · EN · ES</span></div>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="sched-form">
+        <div class="sf-head">
+          <span class="sf-title" id="sf-title">Escolha data e horário</span>
+          <div class="sf-pills">
+            <div class="sf-pill on" id="pill1"></div>
+            <div class="sf-pill" id="pill2"></div>
+            <div class="sf-pill" id="pill3"></div>
+          </div>
+        </div>
+        <div class="sf-body">
+
+          <!-- STEP 1 -->
+          <div class="cal-step on" id="s1">
+            <div class="cal-nav">
+              <button class="cal-btn" id="prev-m">‹</button>
+              <span class="cal-m" id="cal-m">Abril 2026</span>
+              <button class="cal-btn" id="next-m">›</button>
+            </div>
+            <div class="cal-wk">
+              <div class="cal-wd">Dom</div><div class="cal-wd">Seg</div>
+              <div class="cal-wd">Ter</div><div class="cal-wd">Qua</div>
+              <div class="cal-wd">Qui</div><div class="cal-wd">Sex</div>
+              <div class="cal-wd">Sáb</div>
+            </div>
+            <div class="cal-days" id="cal-days"></div>
+            <div class="slots-blk" id="slots-blk">
+              <div class="slots-lbl">Horários disponíveis — <span id="slots-date-lbl"></span></div>
+              <div class="slots-grid" id="slots-grid"></div>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="data-step" id="s2">
+            <div class="fg">
+              <!-- exames selector (só exame) -->
+              <div class="fgroup full" id="exam-wrap" style="display:none">
+                <label class="flbl">Tipo de exame solicitado</label>
+                <div class="exam-sel">
+                  <div class="exam-opt" onclick="pickExam(this,'Hemograma Completo')"><span class="eico">🩸</span><span class="etxt">Hemograma Completo</span><span class="echeck">✓</span></div>
+                  <div class="exam-opt" onclick="pickExam(this,'Glicemia / HbA1c')"><span class="eico">💉</span><span class="etxt">Glicemia / HbA1c</span><span class="echeck">✓</span></div>
+                  <div class="exam-opt" onclick="pickExam(this,'Lipidograma')"><span class="eico">🫀</span><span class="etxt">Lipidograma</span><span class="echeck">✓</span></div>
+                  <div class="exam-opt" onclick="pickExam(this,'TSH / T4 Livre')"><span class="eico">🦋</span><span class="etxt">TSH / T4 Livre</span><span class="echeck">✓</span></div>
+                  <div class="exam-opt" onclick="pickExam(this,'Urina / EAS')"><span class="eico">🧪</span><span class="etxt">Urina / EAS</span><span class="echeck">✓</span></div>
+                  <div class="exam-opt" onclick="pickExam(this,'Raio-X / Imagem')"><span class="eico">🫁</span><span class="etxt">Raio-X / Imagem</span><span class="echeck">✓</span></div>
+                  <div class="exam-opt" onclick="pickExam(this,'Exame Parasitológico')"><span class="eico">🔬</span><span class="etxt">Parasitológico</span><span class="echeck">✓</span></div>
+                  <div class="exam-opt" onclick="pickExam(this,'Outros exames')"><span class="eico">📊</span><span class="etxt">Outros exames</span><span class="echeck">✓</span></div>
+                </div>
+              </div>
+
+              <div class="fgroup">
+                <label class="flbl">Nome completo *</label>
+                <input type="text" class="finput" id="f-nome" placeholder="Seu nome completo">
+              </div>
+              <div class="fgroup">
+                <label class="flbl">WhatsApp *</label>
+                <input type="tel" class="finput" id="f-tel" placeholder="(85) 99999-9999">
+              </div>
+              <div class="fgroup">
+                <label class="flbl">E-mail</label>
+                <input type="email" class="finput" id="f-email" placeholder="seu@email.com">
+              </div>
+              <div class="fgroup">
+                <label class="flbl">Data de nascimento</label>
+                <input type="date" class="finput" id="f-nasc">
+              </div>
+              <div class="fgroup">
+                <label class="flbl">Idioma preferido</label>
+                <select class="fsel" id="f-idioma">
+                  <option value="PT">Português</option>
+                  <option value="EN">English</option>
+                  <option value="ES">Español</option>
+                </select>
+              </div>
+              <div class="fgroup">
+                <label class="flbl">Sexo</label>
+                <select class="fsel" id="f-sexo">
+                  <option value="">Selecione</option>
+                  <option>Masculino</option>
+                  <option>Feminino</option>
+                  <option>Prefiro não informar</option>
+                </select>
+              </div>
+              <div class="fgroup full">
+                <label class="flbl">Motivo / queixa principal</label>
+                <textarea class="ftxt" id="f-queixa" placeholder="Descreva brevemente sua queixa ou o motivo da consulta…"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="conf-step" id="s3">
+            <div class="conf-ico">🎉</div>
+            <div class="conf-ttl">Agendamento confirmado!</div>
+            <div class="conf-sub">Link da videochamada e confirmação serão enviados via WhatsApp. O pagamento via PIX é realizado após a confirmação.</div>
+            <div class="conf-card">
+              <div class="conf-row"><span class="ck">Tipo</span><span class="cv" id="c-tipo">—</span></div>
+              <div class="conf-row"><span class="ck">Data</span><span class="cv" id="c-data">—</span></div>
+              <div class="conf-row"><span class="ck">Horário</span><span class="cv" id="c-hora">—</span></div>
+              <div class="conf-row"><span class="ck">Paciente</span><span class="cv" id="c-nome">—</span></div>
+              <div class="conf-row"><span class="ck">Idioma</span><span class="cv" id="c-idioma">—</span></div>
+              <div class="conf-row"><span class="ck">Médico</span><span class="cv">Dr. Davi Marinho · CRM SP 255415</span></div>
+              <div class="conf-row"><span class="ck">Pagamento</span><span class="cv g">PIX · pós-consulta</span></div>
+            </div>
+            <a id="conf-wa-btn" href="https://wa.me/5585985470174" target="_blank" class="btn-wa" style="display:inline-flex">
+              <svg width="16" height="16" viewBox="0 0 24 24" class="wa-ic"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              Confirmar no WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="sf-foot">
+          <button class="btn-back-f" id="btn-back" style="visibility:hidden" onclick="goBack()">← Voltar</button>
+          <span class="slot-prev" id="slot-prev"></span>
+          <button class="btn-next-f" id="btn-next" disabled onclick="goNext()">Continuar →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ REVIEWS ══ -->
+<div id="avaliacoes">
+  <div class="sec">
+    <div class="sec-tag">Avaliações</div>
+    <h2>O que dizem os pacientes.</h2>
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-txt">"Finalmente um médico que realmente me ouviu. O Dr. Davi entendeu toda minha situação familiar antes de qualquer diagnóstico. Atendimento impecável."</p>
+        <div class="rev-auth"><div class="rev-av">RS</div><div><div class="rev-name">Rodrigo Silva</div><div class="rev-date">Março 2026</div></div></div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-txt">"Que Deus abençoe! Você realmente se preocupa com as pessoas. Recebi meu atestado rapidamente e ainda teve acompanhamento pelo WhatsApp depois."</p>
+        <div class="rev-auth"><div class="rev-av">MI</div><div><div class="rev-name">Maria Inês</div><div class="rev-date">Fevereiro 2026</div></div></div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-txt">"Moro no exterior e precisava de atendimento em inglês. O Dr. Davi foi fluente, profissional e resolutivo. Recebi minha receita digital no mesmo dia."</p>
+        <div class="rev-auth"><div class="rev-av">AL</div><div><div class="rev-name">Ana Lima</div><div class="rev-date">Janeiro 2026</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FAQ ══ -->
+<div class="sec-full-bg" id="faq">
+  <div class="sec" style="max-width:740px">
+    <div class="sec-tag">Dúvidas frequentes</div>
+    <h2>FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Os documentos têm validade legal em todo o Brasil?</span><span class="faq-ico">+</span></button>
+        <div class="faq-ans"><p class="faq-ans-i">Sim. O Dr. Davi emite atestados e receitas por plataformas reconhecidas pelo CFM, com assinatura digital certificada (ICP-Brasil). Validade plena conforme Resolução CFM nº 1.821/07 e Decreto nº 10.278/2020.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Como funciona o retorno gratuito para avaliação de exames?</span><span class="faq-ico">+</span></button>
+        <div class="faq-ans"><p class="faq-ans-i">Após a consulta em que foram solicitados exames, basta enviar os resultados pelo canal preferido (WhatsApp ou e-mail). A avaliação é feita pelo Dr. Davi sem cobrança de nova consulta, favorecendo o cuidado longitudinal.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>O atendimento é disponível em inglês ou espanhol?</span><span class="faq-ico">+</span></button>
+        <div class="faq-ans"><p class="faq-ans-i">Sim. O Dr. Davi tem fluência em inglês e espanhol. Ideal para brasileiros residentes no exterior ou pacientes estrangeiros que buscam atendimento médico humanizado em seu idioma.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Como é feito o pagamento? Precisa de depósito antecipado?</span><span class="faq-ico">+</span></button>
+        <div class="faq-ans"><p class="faq-ans-i">Não há depósito antecipado. O pagamento é feito via PIX após a confirmação do agendamento — você paga apenas no dia da consulta. O QR Code é enviado pelo WhatsApp junto à confirmação.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Qual é o diferencial da Medicina de Família e Comunidade?</span><span class="faq-ico">+</span></button>
+        <div class="faq-ans"><p class="faq-ans-i">O médico de família atende todas as idades e condições, mas vai além do diagnóstico: considera o contexto familiar, social e emocional de cada pessoa. O objetivo é o cuidado integral e longitudinal — não apenas resolver a queixa pontual, mas acompanhar a saúde no longo prazo.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Como recebo os documentos após a consulta?</span><span class="faq-ico">+</span></button>
+        <div class="faq-ans"><p class="faq-ans-i">Os documentos são enviados por plataformas de prescrição digital reconhecidas pelo CFM — diretamente para seu e-mail ou SMS. Sem necessidade de app. O envio acontece durante ou logo após a consulta.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CTA FINAL ══ -->
+<section class="cta-sec">
+  <div class="cta-box">
+    <h2>Pronto para ser cuidado<br>de verdade?</h2>
+    <p>Agende com Dr. Davi Marinho — especialista em Medicina de Família, residência pelo Hospital Santa Marcelina/SP. Sem sair de casa, sem burocracia.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/5585985470174?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" class="btn-wa">
+        <svg width="17" height="17" viewBox="0 0 24 24" class="wa-ic"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+      <a href="#agendamento" class="btn-ghost">📅 Agendar Online</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">Dr. Davi Marinho</div>
+      <p class="foot-desc">Médico de Família e Comunidade · CRM SP 255415. Residência Hospital Santa Marcelina/SP. Atendimento online humanizado, baseado em evidências.</p>
+      <p class="foot-legal">Arthur Ernani Saldanha Servicos Medicos LTDA<br>CNPJ: 55.514.940/0001-90<br>Rua Rio Grande do Norte, 1435, Sala 708 — BH/MG</p>
+    </div>
+    <div>
+      <h4>Navegação</h4>
+      <ul class="foot-links">
+        <li><a href="#sobre">Sobre o médico</a></li>
+        <li><a href="#agendamento">Agendar consulta</a></li>
+        <li><a href="#avaliacoes">Avaliações</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Clínica</h4>
+      <ul class="foot-links">
+        <li><a href="https://clinicaonlinepopular.com.br" target="_blank">Clínica Online Popular</a></li>
+        <li><a href="https://clinicaonlinepopular.com.br/doctor/dr-arthur-ernani/" target="_blank">Dr. Arthur Ernani</a></li>
+        <li><a href="https://artursales11.github.io/Bubux-Repository-/" target="_blank">Repositório GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <ul class="foot-links">
+        <li><a href="https://wa.me/5585985470174" target="_blank">WhatsApp direto</a></li>
+        <li><a href="mailto:davimarinho154@gmail.com">davimarinho154@gmail.com</a></li>
+        <li><a href="https://portal.cfm.org.br/" target="_blank">Verificar CRM SP 255415</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-btm">
+    <span>© 2026 Dr. Davi Marinho · Clínica Online Popular</span>
+    <span>CRM SP 255415 · MFC</span>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/5585985470174?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" class="wa-float" title="Agendar via WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" class="wa-ic"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+// ── DOC TABS ──
+function switchDocTab(id, el) {
+  document.querySelectorAll('.doc-tab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.doc-panel').forEach(p=>p.classList.remove('on'));
+  el.classList.add('on');
+  document.getElementById('tab-'+id).classList.add('on');
+}
+
+// ── TIPO ──
+const TIPOS = ['consulta','familia','exame','retorno'];
+let tipoAtual = 'consulta';
+function selectTipo(t) {
+  tipoAtual = t;
+  TIPOS.forEach(x => document.getElementById('tipo-'+x).classList.toggle('on', x===t));
+  document.getElementById('exam-wrap').style.display = t==='exame' ? 'flex' : 'none';
+}
+
+// ── CALENDÁRIO ──
+const MONTHS = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+let curDate = new Date(2026,3,1), selDay=null, selSlot=null, curStep=1;
+
+// Slots Davi (manhã pesada, tempo mais longo por abordagem MFC)
+const SLOTS = {
+  1:['08:00','09:30','11:00','14:00','15:30'],
+  2:['08:00','09:30','11:00','14:00'],
+  3:['09:30','11:00','15:30','17:00'],
+  7:['08:00','09:30','11:00','14:00','15:30','17:00'],
+  8:['08:00','09:30','11:00','14:00','15:30'],
+  9:['09:30','11:00','14:00','15:30'],
+  10:['08:00','11:00','14:00','15:30'],
+  14:['08:00','09:30','11:00','14:00','15:30','17:00'],
+  15:['09:30','11:00','14:00','15:30'],
+  16:['08:00','11:00','14:00','17:00'],
+  17:['09:30','11:00','15:30'],
+  21:['08:00','09:30','11:00','14:00','15:30'],
+  22:['09:30','11:00','14:00','15:30'],
+  23:['08:00','09:30','14:00'],
+  24:['09:30','11:00','15:30'],
+  28:['08:00','09:30','11:00','14:00'],
+  29:['09:30','11:00','14:00','15:30'],
+  30:['08:00','09:30','14:00','15:30'],
+};
+const BOOKED = {7:['09:30','14:00'],14:['08:00','15:30'],21:['11:00']};
+
+function renderCal() {
+  const y=curDate.getFullYear(), m=curDate.getMonth();
+  document.getElementById('cal-m').textContent = MONTHS[m]+' '+y;
+  const first=new Date(y,m,1).getDay(), total=new Date(y,m+1,0).getDate();
+  const today=new Date(), c=document.getElementById('cal-days');
+  c.innerHTML='';
+  for(let i=0;i<first;i++){const d=document.createElement('div');d.className='cal-d emp';c.appendChild(d);}
+  for(let d=1;d<=total;d++){
+    const el=document.createElement('div'); el.className='cal-d'; el.textContent=d;
+    const dow=new Date(y,m,d).getDay();
+    const past=new Date(y,m,d)<new Date(today.getFullYear(),today.getMonth(),today.getDate());
+    if(past||dow===0){el.classList.add('dis');}
+    else{
+      if(SLOTS[d]) el.classList.add('has');
+      if(d===today.getDate()&&m===today.getMonth()&&y===today.getFullYear()) el.classList.add('today');
+      if(selDay===d) el.classList.add('sel');
+      el.addEventListener('click',()=>pickDay(d,el));
+    }
+    c.appendChild(el);
+  }
+}
+
+function pickDay(d,el){
+  document.querySelectorAll('.cal-d').forEach(c=>c.classList.remove('sel'));
+  el.classList.add('sel'); selDay=d; selSlot=null;
+  document.getElementById('slots-date-lbl').textContent=d+' de '+MONTHS[curDate.getMonth()];
+  renderSlots(d);
+  document.getElementById('slots-blk').classList.add('on');
+  updateNav();
+}
+
+function renderSlots(d){
+  const g=document.getElementById('slots-grid'); g.innerHTML='';
+  const sl=SLOTS[d]||[], bk=BOOKED[d]||[];
+  if(!sl.length){g.innerHTML='<p style="color:var(--muted);font-size:12px;grid-column:1/-1">Sem horários disponíveis.</p>';return;}
+  sl.forEach(t=>{
+    const el=document.createElement('div'); el.className='tslot'; el.textContent=t;
+    if(bk.includes(t)) el.classList.add('bk');
+    else el.addEventListener('click',()=>{
+      document.querySelectorAll('.tslot').forEach(s=>s.classList.remove('sel'));
+      el.classList.add('sel'); selSlot=t;
+      document.getElementById('slot-prev').textContent=d+'/'+MONTHS[curDate.getMonth()].substring(0,3)+' • '+t;
+      updateNav();
+    });
+    g.appendChild(el);
+  });
+}
+
+document.getElementById('prev-m').addEventListener('click',()=>{curDate.setMonth(curDate.getMonth()-1);selDay=null;selSlot=null;document.getElementById('slots-blk').classList.remove('on');document.getElementById('slot-prev').textContent='';renderCal();updateNav();});
+document.getElementById('next-m').addEventListener('click',()=>{curDate.setMonth(curDate.getMonth()+1);selDay=null;selSlot=null;document.getElementById('slots-blk').classList.remove('on');document.getElementById('slot-prev').textContent='';renderCal();updateNav();});
+
+// ── EXAM ──
+let selExam='';
+function pickExam(el,exam){
+  document.querySelectorAll('.exam-opt').forEach(o=>o.classList.remove('on'));
+  el.classList.add('on'); selExam=exam;
+}
+
+// ── STEP NAV ──
+function updateNav(){
+  const btn=document.getElementById('btn-next');
+  if(curStep===1) btn.disabled=!(selDay&&selSlot);
+  else if(curStep===2){
+    const n=document.getElementById('f-nome').value.trim();
+    const t=document.getElementById('f-tel').value.trim();
+    btn.disabled=!(n&&t);
+  }
+}
+document.querySelectorAll('.finput,.fsel,.ftxt').forEach(el=>el.addEventListener('input',()=>{if(curStep===2)updateNav();}));
+
+function setPill(n,s){const p=document.getElementById('pill'+n);p.classList.remove('on','done');if(s)p.classList.add(s);}
+
+function goNext(){
+  if(curStep===1){
+    curStep=2;
+    document.getElementById('s1').classList.remove('on');
+    document.getElementById('exam-wrap').style.display=tipoAtual==='exame'?'flex':'none';
+    document.getElementById('s2').classList.add('on');
+    document.getElementById('btn-back').style.visibility='visible';
+    document.getElementById('btn-next').textContent='Confirmar ✓';
+    document.getElementById('sf-title').textContent='Seus dados';
+    setPill(1,'done');setPill(2,'on');
+    updateNav();
+  } else if(curStep===2){
+    curStep=3;
+    document.getElementById('s2').classList.remove('on');
+    document.getElementById('s3').classList.add('on');
+    setPill(2,'done');setPill(3,'on');
+    const tipoLabel={
+      consulta:'Consulta Clínica',
+      familia:'Saúde da Família (MFC)',
+      exame:'Solicitação de Exames'+(selExam?' — '+selExam:''),
+      retorno:'Retorno / Análise de Exames'
+    };
+    document.getElementById('c-tipo').textContent=tipoLabel[tipoAtual];
+    document.getElementById('c-data').textContent=selDay+' de '+MONTHS[curDate.getMonth()]+' de '+curDate.getFullYear();
+    document.getElementById('c-hora').textContent=selSlot;
+    document.getElementById('c-nome').textContent=document.getElementById('f-nome').value;
+    const idiomas={PT:'Português',EN:'English',ES:'Español'};
+    document.getElementById('c-idioma').textContent=idiomas[document.getElementById('f-idioma').value]||'Português';
+    document.getElementById('btn-next').style.display='none';
+    document.getElementById('btn-back').style.visibility='hidden';
+    document.getElementById('slot-prev').textContent='';
+    document.getElementById('sf-title').textContent='Confirmação';
+    // Mensagem WA pré-preenchida
+    const queixa=document.getElementById('f-queixa').value;
+    const idioma=document.getElementById('f-idioma').value;
+    const msg=encodeURIComponent(
+      `Olá Dr. Davi!\n\nAgendei pelo site:\n• Tipo: ${tipoLabel[tipoAtual]}\n• Data: ${selDay}/${MONTHS[curDate.getMonth()]}/${curDate.getFullYear()}\n• Horário: ${selSlot}\n• Nome: ${document.getElementById('f-nome').value}\n• Idioma: ${idiomas[idioma]||'Português'}\n• Motivo: ${queixa||'Não informado'}\n\nAguardo confirmação!`
+    );
+    document.getElementById('conf-wa-btn').href='https://wa.me/5585985470174?text='+msg;
+  }
+}
+
+function goBack(){
+  if(curStep===2){
+    curStep=1;
+    document.getElementById('s2').classList.remove('on');
+    document.getElementById('s1').classList.add('on');
+    document.getElementById('btn-back').style.visibility='hidden';
+    document.getElementById('btn-next').textContent='Continuar →';
+    document.getElementById('btn-next').style.display='flex';
+    document.getElementById('sf-title').textContent='Escolha data e horário';
+    setPill(2,'');setPill(1,'on');
+    if(selDay&&selSlot) document.getElementById('slot-prev').textContent=selDay+'/'+MONTHS[curDate.getMonth()].substring(0,3)+' • '+selSlot;
+    updateNav();
+  }
+}
+
+// ── FAQ ──
+function toggleFaq(btn){
+  const item=btn.parentElement;
+  const ans=item.querySelector('.faq-ans');
+  const open=item.classList.contains('on');
+  document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('on');i.querySelector('.faq-ans').style.maxHeight='0';});
+  if(!open){item.classList.add('on');ans.style.maxHeight=ans.scrollHeight+'px';}
+}
+
+// Init
+renderCal();
+</script>
+</body>
+</html>
